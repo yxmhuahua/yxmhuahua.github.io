@@ -20,27 +20,62 @@
     var CONFIG = {"hostname":"yxmhuahua.github.io","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://yxmhuahua.github.io/index.html">
+  <meta name="description" content="JDBC核心技术讲师：宋红康 微博：尚硅谷-宋红康  第1章：JDBC概述1.1 数据的持久化 持久化(persistence)：把数据保存到可掉电式存储设备中以供之后使用。大多数情况下，特别是企业级应用，数据持久化意味着将内存中的数据保存到硬盘上加以”固化”，而持久化的实现过程大多通过各种关系数据库来完成。  持久化的主要应用是将内存中的数据存储在关系型数据库中，当然也可以存储在磁盘文件、XML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC总结">
+<meta property="og:url" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JDBC核心技术讲师：宋红康 微博：尚硅谷-宋红康  第1章：JDBC概述1.1 数据的持久化 持久化(persistence)：把数据保存到可掉电式存储设备中以供之后使用。大多数情况下，特别是企业级应用，数据持久化意味着将内存中的数据保存到硬盘上加以”固化”，而持久化的实现过程大多通过各种关系数据库来完成。  持久化的主要应用是将内存中的数据存储在关系型数据库中，当然也可以存储在磁盘文件、XML">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566741430592.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555575760234.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555575981203.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566741692804.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1565969323908.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555576157618.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555576170074.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566134718955.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566134781682.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566135290460.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566136831283.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555576477107.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566573842140.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566569819744.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555580152530.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555579494691.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555579816884.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555580275036.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555580735377.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555580763636.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555580937490.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555580965019.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555581069798.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555586275271.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566726681515.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566745811244.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555593464033.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555593598606.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555595163263.png">
+<meta property="og:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1555595198644.png">
+<meta property="article:published_time" content="2020-02-27T16:09:46.616Z">
+<meta property="article:modified_time" content="2020-01-05T15:29:00.076Z">
 <meta property="article:author" content="yxmhuahua">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/1566741430592.png">
 
-<link rel="canonical" href="https://yxmhuahua.github.io/">
+<link rel="canonical" href="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Hexo</title>
+  <title>JDBC总结 | Hexo</title>
   
 
 
@@ -140,10 +175,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="https://yxmhuahua.github.io/2020/02/28/JDBC%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -157,8 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/28/JDBC%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">JDBC总结</a>
+          JDBC总结
         </h1>
 
         <div class="post-meta">
@@ -189,7 +223,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="JDBC核心技术"><a href="#JDBC核心技术" class="headerlink" title="JDBC核心技术"></a>JDBC核心技术</h1><p>讲师：宋红康</p>
+        <h1 id="JDBC核心技术"><a href="#JDBC核心技术" class="headerlink" title="JDBC核心技术"></a>JDBC核心技术</h1><p>讲师：宋红康</p>
 <p>微博：尚硅谷-宋红康</p>
 <hr>
 <h2 id="第1章：JDBC概述"><a href="#第1章：JDBC概述" class="headerlink" title="第1章：JDBC概述"></a>第1章：JDBC概述</h2><h3 id="1-1-数据的持久化"><a href="#1-1-数据的持久化" class="headerlink" title="1.1 数据的持久化"></a>1.1 数据的持久化</h3><ul>
@@ -1158,24 +1192,26 @@
 <h2 id="JDBC总结"><a href="#JDBC总结" class="headerlink" title="JDBC总结"></a>JDBC总结</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">总结</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testUpdateWithTx</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	Connection conn = <span class="keyword">null</span>;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="comment">//1.获取连接的操作（</span></span><br><span class="line">		<span class="comment">//① 手写的连接：JDBCUtils.getConnection();</span></span><br><span class="line">		<span class="comment">//② 使用数据库连接池：C3P0;DBCP;Druid</span></span><br><span class="line">		<span class="comment">//2.对数据表进行一系列CRUD操作</span></span><br><span class="line">		<span class="comment">//① 使用PreparedStatement实现通用的增删改、查询操作（version 1.0 \ version 2.0)</span></span><br><span class="line"><span class="comment">//version2.0的增删改public void update(Connection conn,String sql,Object ... args)&#123;&#125;</span></span><br><span class="line"><span class="comment">//version2.0的查询 public &lt;T&gt; T getInstance(Connection conn,Class&lt;T&gt; clazz,String sql,Object ... args)&#123;&#125;</span></span><br><span class="line">		<span class="comment">//② 使用dbutils提供的jar包中提供的QueryRunner类</span></span><br><span class="line">			</span><br><span class="line">		<span class="comment">//提交数据</span></span><br><span class="line">		conn.commit();</span><br><span class="line">			</span><br><span class="line">	</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//回滚数据</span></span><br><span class="line">			conn.rollback();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e1) &#123;</span><br><span class="line">			e1.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">	&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">		<span class="comment">//3.关闭连接等操作</span></span><br><span class="line">		<span class="comment">//① JDBCUtils.closeResource();</span></span><br><span class="line">		<span class="comment">//② 使用dbutils提供的jar包中提供的DbUtils类提供了关闭的相关操作</span></span><br><span class="line">			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -1226,6 +1262,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC核心技术"><span class="nav-number">1.</span> <span class="nav-text">JDBC核心技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1章：JDBC概述"><span class="nav-number">1.1.</span> <span class="nav-text">第1章：JDBC概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-数据的持久化"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 数据的持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Java中的数据存储技术"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 Java中的数据存储技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-JDBC介绍"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 JDBC介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-JDBC体系结构"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 JDBC体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-JDBC程序编写步骤"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 JDBC程序编写步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2章：获取数据库连接"><span class="nav-number">1.2.</span> <span class="nav-text">第2章：获取数据库连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-要素一：Driver接口实现类"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 要素一：Driver接口实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-Driver接口介绍"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">2.1.1 Driver接口介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-加载与注册JDBC驱动"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.1.2 加载与注册JDBC驱动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-要素二：URL"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 要素二：URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-要素三：用户名和密码"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 要素三：用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-数据库连接方式举例"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 数据库连接方式举例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-1-连接方式一"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">2.4.1 连接方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-2-连接方式二"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2.4.2 连接方式二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-3-连接方式三"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">2.4.3 连接方式三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-4-连接方式四"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">2.4.4 连接方式四</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-5-连接方式五-最终版"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">2.4.5 连接方式五(最终版)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3章：使用PreparedStatement实现CRUD操作"><span class="nav-number">1.3.</span> <span class="nav-text">第3章：使用PreparedStatement实现CRUD操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-操作和访问数据库"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 操作和访问数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-使用Statement操作数据表的弊端"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 使用Statement操作数据表的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-PreparedStatement的使用"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 PreparedStatement的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-PreparedStatement介绍"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">3.3.1 PreparedStatement介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-2-PreparedStatement-vs-Statement"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">3.3.2 PreparedStatement vs Statement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-3-Java与SQL对应数据类型转换表"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">3.3.3 Java与SQL对应数据类型转换表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-4-使用PreparedStatement实现增、删、改操作"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">3.3.4 使用PreparedStatement实现增、删、改操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-5-使用PreparedStatement实现查询操作"><span class="nav-number">1.3.3.5.</span> <span class="nav-text">3.3.5 使用PreparedStatement实现查询操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-ResultSet与ResultSetMetaData"><span class="nav-number">1.3.4.</span> <span class="nav-text">3.4 ResultSet与ResultSetMetaData</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-1-ResultSet"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">3.4.1 ResultSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-2-ResultSetMetaData"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">3.4.2 ResultSetMetaData</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-资源的释放"><span class="nav-number">1.3.5.</span> <span class="nav-text">3.5 资源的释放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-JDBC-API小结"><span class="nav-number">1.3.6.</span> <span class="nav-text">3.6 JDBC API小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章节练习"><span class="nav-number">1.4.</span> <span class="nav-text">章节练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4章-操作BLOB类型字段"><span class="nav-number">1.5.</span> <span class="nav-text">第4章 操作BLOB类型字段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-MySQL-BLOB类型"><span class="nav-number">1.5.1.</span> <span class="nav-text">4.1 MySQL BLOB类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-向数据表中插入大数据类型"><span class="nav-number">1.5.2.</span> <span class="nav-text">4.2 向数据表中插入大数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-修改数据表中的Blob类型字段"><span class="nav-number">1.5.3.</span> <span class="nav-text">4.3 修改数据表中的Blob类型字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-从数据表中读取大数据类型"><span class="nav-number">1.5.4.</span> <span class="nav-text">4.4 从数据表中读取大数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5章-批量插入"><span class="nav-number">1.6.</span> <span class="nav-text">第5章 批量插入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-批量执行SQL语句"><span class="nav-number">1.6.1.</span> <span class="nav-text">5.1 批量执行SQL语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-高效的批量插入"><span class="nav-number">1.6.2.</span> <span class="nav-text">5.2 高效的批量插入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1-实现层次一：使用Statement"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">5.2.1 实现层次一：使用Statement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2-实现层次二：使用PreparedStatement"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">5.2.2 实现层次二：使用PreparedStatement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-3-实现层次三"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">5.2.3 实现层次三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-4-实现层次四"><span class="nav-number">1.6.2.4.</span> <span class="nav-text">5.2.4 实现层次四</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6章：-数据库事务"><span class="nav-number">1.7.</span> <span class="nav-text">第6章： 数据库事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-数据库事务介绍"><span class="nav-number">1.7.1.</span> <span class="nav-text">6.1 数据库事务介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-JDBC事务处理"><span class="nav-number">1.7.2.</span> <span class="nav-text">6.2 JDBC事务处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-事务的ACID属性"><span class="nav-number">1.7.3.</span> <span class="nav-text">6.3 事务的ACID属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-1-数据库的并发问题"><span class="nav-number">1.7.3.1.</span> <span class="nav-text">6.3.1 数据库的并发问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-2-四种隔离级别"><span class="nav-number">1.7.3.2.</span> <span class="nav-text">6.3.2 四种隔离级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-3-在MySql中设置隔离级别"><span class="nav-number">1.7.3.3.</span> <span class="nav-text">6.3.3 在MySql中设置隔离级别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7章：DAO及相关实现类"><span class="nav-number">1.8.</span> <span class="nav-text">第7章：DAO及相关实现类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#【BaseDAO-java】"><span class="nav-number">1.8.1.</span> <span class="nav-text">【BaseDAO.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【BookDAO-java】"><span class="nav-number">1.8.2.</span> <span class="nav-text">【BookDAO.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【UserDAO-java】"><span class="nav-number">1.8.3.</span> <span class="nav-text">【UserDAO.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【BookDaoImpl-java】"><span class="nav-number">1.8.4.</span> <span class="nav-text">【BookDaoImpl.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【UserDaoImpl-java】"><span class="nav-number">1.8.5.</span> <span class="nav-text">【UserDaoImpl.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【Book-java】"><span class="nav-number">1.8.6.</span> <span class="nav-text">【Book.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【Page-java】"><span class="nav-number">1.8.7.</span> <span class="nav-text">【Page.java】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【User-java】"><span class="nav-number">1.8.8.</span> <span class="nav-text">【User.java】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第8章：数据库连接池"><span class="nav-number">1.9.</span> <span class="nav-text">第8章：数据库连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-JDBC数据库连接池的必要性"><span class="nav-number">1.9.1.</span> <span class="nav-text">8.1 JDBC数据库连接池的必要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-数据库连接池技术"><span class="nav-number">1.9.2.</span> <span class="nav-text">8.2 数据库连接池技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-多种开源的数据库连接池"><span class="nav-number">1.9.3.</span> <span class="nav-text">8.3 多种开源的数据库连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-1-C3P0数据库连接池"><span class="nav-number">1.9.3.1.</span> <span class="nav-text">8.3.1 C3P0数据库连接池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-2-DBCP数据库连接池"><span class="nav-number">1.9.3.2.</span> <span class="nav-text">8.3.2 DBCP数据库连接池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-3-Druid（德鲁伊）数据库连接池"><span class="nav-number">1.9.3.3.</span> <span class="nav-text">8.3.3 Druid（德鲁伊）数据库连接池</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9章：Apache-DBUtils实现CRUD操作"><span class="nav-number">1.10.</span> <span class="nav-text">第9章：Apache-DBUtils实现CRUD操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-Apache-DBUtils简介"><span class="nav-number">1.10.1.</span> <span class="nav-text">9.1 Apache-DBUtils简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-主要API的使用"><span class="nav-number">1.10.2.</span> <span class="nav-text">9.2 主要API的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-1-DbUtils"><span class="nav-number">1.10.2.1.</span> <span class="nav-text">9.2.1 DbUtils</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-2-QueryRunner类"><span class="nav-number">1.10.2.2.</span> <span class="nav-text">9.2.2 QueryRunner类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-3-ResultSetHandler接口及实现类"><span class="nav-number">1.10.2.3.</span> <span class="nav-text">9.2.3 ResultSetHandler接口及实现类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC总结"><span class="nav-number">1.11.</span> <span class="nav-text">JDBC总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
