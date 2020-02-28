@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/ava180.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pink_flower32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pink_flower16.png">
+  <link rel="mask-icon" href="/images/gen.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yxmhuahua.github.io","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="关于springMVC中@ModelAttribute注解的隐含model属性名https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014645508&#x2F;article&#x2F;details&#x2F;88871482 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * 测试ModelAttribute注解； * 使用场景：书城">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于springMVC中@ModelAttribute注解的隐含model属性名">
+<meta property="og:url" content="https://yxmhuahua.github.io/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/index.html">
+<meta property="og:site_name" content="Alice&#39;s blog">
+<meta property="og:description" content="关于springMVC中@ModelAttribute注解的隐含model属性名https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014645508&#x2F;article&#x2F;details&#x2F;88871482 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * 测试ModelAttribute注解； * 使用场景：书城">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140302033-db6b1f48-b744-4611-82d6-41d0f8b354c0.png#align=left&display=inline&height=191&originHeight=191&originWidth=487&size=0&status=done&style=none&width=487">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140315796-beac0b2e-785d-4008-987e-4079130a7187.png#align=left&display=inline&height=167&originHeight=167&originWidth=564&size=0&status=done&style=none&width=564">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140324628-e5c8d1cd-cb6d-455a-ad23-72a72d94c3c4.png#align=left&display=inline&height=93&originHeight=93&originWidth=1178&size=0&status=done&style=none&width=1178">
+<meta property="article:published_time" content="2020-02-28T11:19:11.000Z">
+<meta property="article:modified_time" content="2020-02-28T14:01:55.453Z">
+<meta property="article:author" content="爱吃饭的花花">
+<meta property="article:tag" content="spring框架">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140302033-db6b1f48-b744-4611-82d6-41d0f8b354c0.png#align=left&display=inline&height=191&originHeight=191&originWidth=487&size=0&status=done&style=none&width=487">
+
+<link rel="canonical" href="https://yxmhuahua.github.io/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>关于springMVC中@ModelAttribute注解的隐含model属性名 | Alice's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+<a href="https://github.com/yxmhuahua" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alice's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://yxmhuahua.github.io/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ava.jpg">
+      <meta itemprop="name" content="爱吃饭的花花">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alice's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于springMVC中@ModelAttribute注解的隐含model属性名
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:01:55" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">spring框架</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="关于springMVC中-ModelAttribute注解的隐含model属性名"><a href="#关于springMVC中-ModelAttribute注解的隐含model属性名" class="headerlink" title="关于springMVC中@ModelAttribute注解的隐含model属性名"></a>关于springMVC中@ModelAttribute注解的隐含model属性名</h1><p><a href="https://blog.csdn.net/u014645508/article/details/88871482" target="_blank" rel="noopener">https://blog.csdn.net/u014645508/article/details/88871482</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试ModelAttribute注解；</span></span><br><span class="line"><span class="comment"> * 使用场景：书城的图书修改为例；</span></span><br><span class="line"><span class="comment"> * 1）页面端；</span></span><br><span class="line"><span class="comment"> * 		显示要修改的图书的信息，图书的所有字段都在</span></span><br><span class="line"><span class="comment"> * 2）servlet收到修改请求，调用dao；</span></span><br><span class="line"><span class="comment"> * 		String sql="update bs_book set title=?,</span></span><br><span class="line"><span class="comment"> * 					author=?,price=?,</span></span><br><span class="line"><span class="comment"> * 					sales=?,stock=?,img_path=? </span></span><br><span class="line"><span class="comment"> * 				where id=?";</span></span><br><span class="line"><span class="comment"> * 3）实际场景？</span></span><br><span class="line"><span class="comment"> * 		并不是全字段修改；只会修改部分字段，以修改用户信息为例；</span></span><br><span class="line"><span class="comment"> * 		username  password  address;</span></span><br><span class="line"><span class="comment"> * 		1）、不修改的字段可以在页面进行展示但是不要提供修改输入框；</span></span><br><span class="line"><span class="comment"> * 		2）、为了简单，Controller直接在参数位置来写Book对象</span></span><br><span class="line"><span class="comment"> * 		3）、SpringMVC为我们自动封装book；（没有带的值是null）</span></span><br><span class="line"><span class="comment"> * 		4）、如果接下来调用了一个全字段更新的dao操作；会将其他的字段可能变为null；</span></span><br><span class="line"><span class="comment"> * 			sql = "update bs_book set"</span></span><br><span class="line"><span class="comment"> * 			if(book.getBookName())&#123;</span></span><br><span class="line"><span class="comment"> * 				sql +="bookName=?,"</span></span><br><span class="line"><span class="comment"> * 			&#125;</span></span><br><span class="line"><span class="comment"> * 			if(book.getPrice())&#123;</span></span><br><span class="line"><span class="comment"> * 				sql +="price=?"</span></span><br><span class="line"><span class="comment"> * 			&#125;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 4）、如何能保证全字段更新的时候，只更新了页面携带的数据；</span></span><br><span class="line"><span class="comment"> * 		1）、修改dao；代价大？</span></span><br><span class="line"><span class="comment"> * 		2）、Book对象是如何封装的？</span></span><br><span class="line"><span class="comment"> * 			1）、SpringMVC创建一个book对象，每个属性都有默认值，bookName就是null；</span></span><br><span class="line"><span class="comment"> * 				1、让SpringMVC别创建book对象，直接从数据库中先取出一个id=100的book对象的信息</span></span><br><span class="line"><span class="comment"> * 				2、Book [id=100, bookName=西游记, author=张三, stock=12, sales=32, price=98.98]</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 			2）、将请求中所有与book对应的属性一一设置过来；</span></span><br><span class="line"><span class="comment"> * 				3、使用刚才从数据库取出的book对象，给它 的里面设置值；（请求参数带了哪些值就覆盖之前的值）</span></span><br><span class="line"><span class="comment"> * 				4、带了的字段就改为携带的值，没带的字段就保持之前的值</span></span><br><span class="line"><span class="comment"> * 			3）、调用全字段更新就有问题；</span></span><br><span class="line"><span class="comment"> * 				5、将之前从数据库中查到的对象，并且封装了请求参数的对象。进行保存；</span></span><br><span class="line"><span class="comment"> *</span></span><br></pre></td></tr></table></figure>
+ <a id="more"></a>
+<p>在一个Controller内，被@ModelAttribute标注的方法会在此controller的每个handler方法执行前被执行。因此对于一个controller映射多个URL的用法来说，要谨慎使用<br>　　被@ModelAttribute标注的方法的参数绑定规则和普通handler方法相同。<br>　　可以理解为：</p>
+<ol>
+<li>请求到达Controller后，不论其他handler方法的RequestMapping值是多少，请求都会路由至被@ModelAttribute标注的方法；</li>
+<li>由springMVC再对request执行一次forward，路由至真正的handler方法。</li>
+</ol>
+<p><strong>@ModelAttribute作用就是传递参数时防止空值传不过来的现象从而在数据库中查找参数进行弥补</strong><br>**    @ModelAttribute<br>    public String getUser(@RequestParam(value=”id”,required=false) Integer id , Map&lt;String,Object&gt; map) {<br>        User user = new User(1,”tome”,11); //模拟数据库传值<br>        map.put(“user”,user);<br>        System.out.println(“修改”+user);<br>       return “success”;<br>**   }**<br><strong>运行流程：</strong></p>
+<p><strong>1.执行@ModelAttribute注解修饰的方法：从数据库中取出对象，把对象放到Map中，键为 user</strong></p>
+<p><strong>2.SpringMVC从Map中取出User对象，并把表单的请求参数赋给该User对象的对应属性</strong></p>
+<p><strong>3.SpringMVC把上述对象传入目标方法的参数。</strong></p>
+<p><strong>注意：在2ModelAttribute 修饰的方法中放入到Map时的键需要和目标方法入参类型的第一个字母小写的字符串一致。</strong></p>
+<hr>
+<p>在 SpringMVC 的 Controller 中使用 <a href>@ModelAttribute </a> 时，应用情况包括下面几种：<br>1、应用在方法上。<br>2、应用在方法的参数上。<br>3、应用在方法上，并且方法也使用了<a href>@RequestMapping </a></p>
+<p>首先说明一下，被 <a href>@ModelAttribute </a> 注释的方法会在Controller每个方法执行之前都执行，因此对于一个Controller中包含多个URL的时候，要谨慎使用。</p>
+<p>应用在方法上<br>使用@ModelAttribute注解的方法和被@RequestMapping注解的处理方法由很多相似之处:</p>
+<p>**  都可以通过入参接收前台提交的数据，而且对入参绑定的设置都是一样的。**<br>**<br>入参绑定的数据如果没有设置可为空，不能接收空数据,否则会报错。**<br>**<br>都可以将数据放入model中，而且对于一次请求,model是共享的,所以在处理方法中的model中存放了@ModelAttribute注解的方法中存放的数据。**</p>
+<h1 id="1-使用-ModelAttribute-注解无返回值的方法"><a href="#1-使用-ModelAttribute-注解无返回值的方法" class="headerlink" title="1. 使用 @ModelAttribute  注解无返回值的方法"></a>1. 使用 <a href>@ModelAttribute </a> 注解无返回值的方法</h1><p>举例说明一下：</p>
+<p>处理器<br><a href>@ModelAttribute </a><br>public void getUser(@RequestParam(value=”userName”,required=false) String userName,Model model){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User user &#x3D; new User(userName,&quot;123456&quot;);</span><br><span class="line">model.addAttribute(&quot;user&quot;, user);</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>@ModelAttribute注解getUser方法,getUser方法接收前台提交的userName数据,在model中放入user属性和数据。</p>
+<p>@RequestMapping(“/testModelAttribute”)<br>public String testModelAttribute(ModelMap model){<br>System.out.println(“testModelAttribute user:”+model.get(“user”));<br>return “success”;<br>}</p>
+<p>处理方法的入参引入model，由于是同一个请求,所以这个model中存放了@ModelAttribute注解的方法存入的数据。</p>
+<p>测试页面</p>
+<form action="testModelAttribute" method="post">
+   用户名:<input type="text" name="userName" value="jack">
+   <button type="submit">submit</button>
+</form>
+![](https://cdn.nlark.com/yuque/0/2020/png/539392/1579140287022-ff4409d2-1466-476e-b817-44f057bc1848.png#align=left&display=inline&height=141&originHeight=141&originWidth=488&size=0&status=done&style=none&width=488)
+点击提交
+![](https://cdn.nlark.com/yuque/0/2020/png/539392/1579140266137-08eb733f-486e-4db5-bfcf-9a9041a891e2.png#align=left&display=inline&height=119&originHeight=119&originWidth=1065&size=0&status=done&style=none&width=1065)
+
+<p>跳转到success.jsp页面</p>
+<p>success 访问成功！</p>
+<p>${user}<br><img src="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140302033-db6b1f48-b744-4611-82d6-41d0f8b354c0.png#align=left&display=inline&height=191&originHeight=191&originWidth=487&size=0&status=done&style=none&width=487" alt></p>
+<h1 id="2-使用-ModelAttribute-注解带有返回值的方法"><a href="#2-使用-ModelAttribute-注解带有返回值的方法" class="headerlink" title="2. 使用 @ModelAttribute  注解带有返回值的方法"></a>2. 使用 <a href>@ModelAttribute </a> 注解带有返回值的方法</h1><p><a href>@ModelAttribute </a><br>public User getUser(@RequestParam(value=”userName”,required=false) String userName){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User user &#x3D; new User(userName,&quot;123456&quot;);</span><br><span class="line">return user;</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>这种情况不用显示的向model中放数据，返回的数据会被隐含地放入到model中，在 model 中的 key 为 “返回类型首字母小写”，value 为返回的值。<br>上面相当于model.addAttribute(“user”, user);<br>但是这样会很有局限性，我们可以使用@ModelAttribute的value属性值设置存放在model中的属性key值:</p>
+<p>@ModelAttribute(“user1”)<br>public User getUser(@RequestParam(value=”userName”,required=false) String userName,Model model){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User user &#x3D; new User(userName,&quot;123456&quot;);</span><br><span class="line">return user;</span><br></pre></td></tr></table></figure>
+
+<p>}<br>将key值修改为user1,相当于model.addAttribute(“user1”, user);</p>
+<p>应用在方法的参数上<br>看代码：</p>
+<p>@ModelAttribute(“user”)<br>public User getUser(Model model){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User user &#x3D; new User(&quot;Tom&quot;,&quot;123456&quot;);</span><br><span class="line">return user;</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>@RequestMapping(“/testModelAttribute”)<br>public String testModelAttribute(@ModelAttribute(“user”)User user1,Model model){<br>System.out.println(“testModelAttribute User:”+user1);<br>System.out.println(“testModelAttribute model:”+model.toString());<br>return “success”;<br>}</p>
+<ul>
+<li>测试页面</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140315796-beac0b2e-785d-4008-987e-4079130a7187.png#align=left&display=inline&height=167&originHeight=167&originWidth=564&size=0&status=done&style=none&width=564" alt><br>执行结果:<br><img src="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140324628-e5c8d1cd-cb6d-455a-ad23-72a72d94c3c4.png#align=left&display=inline&height=93&originHeight=93&originWidth=1178&size=0&status=done&style=none&width=1178" alt><br>在处理方法的入参中使用了@ModelAttribute(“user”)User user1<br>执行流程<br>1.springmvc 解析本次请求共享的model（BindingAwareModelMap），<br>由于先被getUser方法处理过，model里面保存了<br>user=User[userName=Tom, password=123456]的数据。<br>2.从model中取出key为user的User对象，并把表单的请求参数赋给这个User对象的对应属性。因为这里前台只传递了 一个参数userName = Jack,所以经过处理这时候的model数据为user=User[userName=Jack, password=123456]userName被覆盖。<br>3.SpringMVC 把上述对象传入目标的参数user1中。</p>
+<p>注意:也可以使用@ModelAttribute修饰,这样会默认使用入参类型第一个字母小写去model中匹配</p>
+<p>看下下面这种情况:</p>
+<p>@ModelAttribute(“user”)<br>public User getUser(Model model){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User user &#x3D; new User(&quot;Tom&quot;,&quot;123456&quot;);</span><br><span class="line">return user;</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>首先getUser方法在model中放入key为user的User对象user=User[userName=Tom, password=123456]</p>
+<p>@RequestMapping(“/testModelAttribute”)<br>public String testModelAttribute(@ModelAttribute(“newUser”)User user,Model model){<br>System.out.println(“testModelAttribute User:”+user);<br>System.out.println(“testModelAttribute model:”+model.toString());<br>return “success”;<br>}</p>
+<p>然后处理方法中使用@ModelAttribute(“newUser”)User user<br>执行流程：<br>1.springmvc 解析本次请求共享的model（BindingAwareModelMap），<br>由于先被getUser方法处理过，model里面保存了<br>user=User[userName=Tom, password=123456]的数据。<br>2.从model中去取key为newUser的User对象，这时候发现没有,那么就去新建一个User对象，并把表单的请求参数赋给这个User对象的对应属性，然后将之绑定到入参中。这时候Model中就存放了两个User对象。因为这里前台只传递了 一个参数userName = Jack,所以经过处理这时候的model数据为user=User[userName=Tom,password=123456]和<br>newUser=User[userName=Jack, password=null]。<br>3.SpringMVC 把上述新建的User对象newUser传入目标的参数user中。</p>
+<h1 id="3-应用在方法上，并且方法也使用了-RequestMapping"><a href="#3-应用在方法上，并且方法也使用了-RequestMapping" class="headerlink" title="3.应用在方法上，并且方法也使用了@RequestMapping "></a>3.应用在方法上，并且方法也使用了<a href>@RequestMapping </a></h1><p>如下代码：</p>
+<p><a href>@RequestMapping(value </a> = “/test1”)<br>@ModelAttribute(“name1”)<br>public String test1(<a href>@RequestParam(required </a> = false) String name) {<br>return name;<br>}</p>
+<p>这种情况下，返回值 String （或者其他对象），就不再是视图了。还是我们上面讲到的放入 Model 中的值，对应的key为注解指定的name1，此时对应的页面就是 <a href>@RequestMapping </a> 的值 test1，交给页面解析后就是test1.jsp</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/spring%E6%A1%86%E6%9E%B6/" rel="tag"><i class="fa fa-tag"></i>spring框架</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/" rel="prev" title="关于分层，DAO、domain、service、servlet的一些理解">
+      <i class="fa fa-chevron-left"></i> 关于分层，DAO、domain、service、servlet的一些理解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/28/spring%E6%A6%82%E8%BF%B0/" rel="next" title="spring概述">
+      spring概述 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于springMVC中-ModelAttribute注解的隐含model属性名"><span class="nav-number">1.</span> <span class="nav-text">关于springMVC中@ModelAttribute注解的隐含model属性名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-使用-ModelAttribute-注解无返回值的方法"><span class="nav-number">2.</span> <span class="nav-text">1. 使用 @ModelAttribute  注解无返回值的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-使用-ModelAttribute-注解带有返回值的方法"><span class="nav-number">3.</span> <span class="nav-text">2. 使用 @ModelAttribute  注解带有返回值的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-应用在方法上，并且方法也使用了-RequestMapping"><span class="nav-number">4.</span> <span class="nav-text">3.应用在方法上，并且方法也使用了@RequestMapping </span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="爱吃饭的花花"
+      src="/images/ava.jpg">
+  <p class="site-author-name" itemprop="name">爱吃饭的花花</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yxmhuahua" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yxmhuahua" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:875940287.com" title="E-Mail → mailto:875940287.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">爱吃饭的花花</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'VShaa9LJEiJe0XyGQHDzPsC6-gzGzoHsz',
+      appKey     : '0sMr3d293jagk3SzlVPlaBTS',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

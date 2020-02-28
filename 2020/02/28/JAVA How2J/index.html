@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/ava180.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pink_flower32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pink_flower16.png">
+  <link rel="mask-icon" href="/images/gen.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yxmhuahua.github.io","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="How2JJAVA中的类和对象 在编程时，类Hero的概念是一些共同的状态，针对不同的英雄进行不同的对象的实例化，所以实际应用中编程思路要清晰！类就像一个模板，根据这样一个模板，可以创建一个个的具体的英雄；一个个具体的英雄，就叫一个个的对象 ，new Hero() 就是java中创建一个英雄对象的意；  Error:(47, 36) java: 未结束的字符文字错误原因：编码方式的不同，修改之后发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA How2J">
+<meta property="og:url" content="https://yxmhuahua.github.io/2020/02/28/JAVA%20How2J/index.html">
+<meta property="og:site_name" content="Alice&#39;s blog">
+<meta property="og:description" content="How2JJAVA中的类和对象 在编程时，类Hero的概念是一些共同的状态，针对不同的英雄进行不同的对象的实例化，所以实际应用中编程思路要清晰！类就像一个模板，根据这样一个模板，可以创建一个个的具体的英雄；一个个具体的英雄，就叫一个个的对象 ，new Hero() 就是java中创建一个英雄对象的意；  Error:(47, 36) java: 未结束的字符文字错误原因：编码方式的不同，修改之后发">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577085428435-16df2316-c09f-4d67-9d73-01d0d581d06a.png#align=left&display=inline&height=288&name=image.png&originHeight=362&originWidth=594&size=22557&status=done&style=none&width=472">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577085958923-8c823552-cd30-490b-b91a-a385c774f3ae.png#align=left&display=inline&height=249&name=image.png&originHeight=275&originWidth=614&size=16825&status=done&style=none&width=556">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577086020566-3d4348e9-0f23-4e20-9068-e438385f932c.png#align=left&display=inline&height=179&name=image.png&originHeight=179&originWidth=615&size=10209&status=done&style=none&width=615">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577093853502-ab73cd05-819b-4e4f-ad55-b63100707a9c.png#align=left&display=inline&height=306&originHeight=453&originWidth=639&size=0&status=done&style=none&width=432">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577093853476-1bbb2e12-05b1-4da4-9dcf-d3a975cc767c.png#align=left&display=inline&height=205&originHeight=220&originWidth=661&size=0&status=done&style=none&width=617">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577093853455-60eb0c52-4abc-4d56-afd7-2a40af9060c9.png#align=left&display=inline&height=318&originHeight=339&originWidth=635&size=0&status=done&style=none&width=596">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577083519786-0d10936d-cfaa-45d7-a03b-19fc2bbd0a31.png#align=left&display=inline&height=225&name=image.png&originHeight=321&originWidth=423&size=16702&status=done&style=none&width=296">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577083577319-bce00875-4449-4442-b954-ebec6e761989.png#align=left&display=inline&height=258&name=image.png&originHeight=366&originWidth=450&size=20614&status=done&style=none&width=317">
+<meta property="article:published_time" content="2020-02-28T06:19:11.000Z">
+<meta property="article:modified_time" content="2020-02-28T13:51:29.177Z">
+<meta property="article:author" content="爱吃饭的花花">
+<meta property="article:tag" content="java语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/539392/1577085428435-16df2316-c09f-4d67-9d73-01d0d581d06a.png#align=left&display=inline&height=288&name=image.png&originHeight=362&originWidth=594&size=22557&status=done&style=none&width=472">
+
+<link rel="canonical" href="https://yxmhuahua.github.io/2020/02/28/JAVA%20How2J/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>JAVA How2J | Alice's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+<a href="https://github.com/yxmhuahua" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alice's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://yxmhuahua.github.io/2020/02/28/JAVA%20How2J/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ava.jpg">
+      <meta itemprop="name" content="爱吃饭的花花">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alice's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JAVA How2J
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-28 14:19:11 / 修改时间：21:51:29" itemprop="dateCreated datePublished" datetime="2020-02-28T14:19:11+08:00">2020-02-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">java语法</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/28/JAVA%20How2J/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/28/JAVA%20How2J/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="How2J"><a href="#How2J" class="headerlink" title="How2J"></a>How2J</h1><h2 id="JAVA中的类和对象"><a href="#JAVA中的类和对象" class="headerlink" title="JAVA中的类和对象"></a>JAVA中的类和对象</h2><ul>
+<li>在编程时，类Hero的概念是<strong>一些共同的状态，针对不同的英雄进行不同的对象的实例化，所以实际应用中编程思路要清晰！类就像一个模板</strong>，根据这样一个模板，可以创建一个个的具体的英雄；一个个具体的英雄，就叫一个个的<strong>对象 ，new Hero()</strong> 就是java中创建一个英雄对象的意；</li>
+</ul>
+<p>Error:(47, 36) java: 未结束的字符文字<br>错误原因：编码方式的不同，修改之后发现是字符型需要双引号而不是单引号！</p>
+<p>Non-static field ‘gailun’ cannot be referenced from a static context<br>是main主函数中，由于主函数是静态函数，所以我们如果在main函数外面实例化，但是不指定对象为静态对象，那么该对象将找不到，或者我们把类设为静态类</p>
+<a id="more"></a>
+<h1 id="错误："><a href="#错误：" class="headerlink" title="错误："></a>错误：</h1><h2 id="1-静态方法里面不能出现this、super"><a href="#1-静态方法里面不能出现this、super" class="headerlink" title="1.静态方法里面不能出现this、super"></a>1.静态方法里面不能出现this、super</h2><p>原因：<br>  这个要从java的内存机制去分析，首先当你New 一个对象的时候，并不是先在堆中为对象开辟内存空间，而是先将类中的静态方法（带有static修饰的静态函数）的代码加载到一个叫做方法区的地方，然后再在堆内存中创建对象。所以说静态方法会随着类的加载而被加载。当你new一个对象时，该对象存在于对内存中，this关键字一般指该对象，但是如果没有new对象，而是通过类名调用该类的静态方法也可以。<br>程序最终都是在内存中执行，变量只有在内存中占有一席之地时才会被访问，类的静态成员（静态变量和静态方法）属于类本身，在类加载的时候就会分配内存，可以通过类名直接去访问，非静态成员（非静态变量和非静态方法）属于类的对象，所以只有在类的对象创建（实例化）的时候才会分配内存，然后通过类的对象去访问。<br>在一个类的静态成员中去访问非静态成员之所以会出错是因为在类的非静态成员不存在的时候静态成员就已经存在了，访问一个内存中不存在的东西当然会出错。</p>
+<p><em>在《Java编程思想》P86页有这样一段话：</em><br>_　　“static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。”_<br>_　　这段话虽然只是说明了static方法的特殊之处，但是可以看出static关键字的基本作用，简而言之，一句话来描述就是：_<br>_　　方便在没有创建对象的情况下来进行调用（方法/变量）。_<br>_　　很显然，被static关键字修饰的方法或者变量不需要依赖于对象来进行访问，只要类被加载了，就可以通过类名去进行访问。_<br>　　<strong>static可以用来修饰类的成员方法、类的成员变量，另外可以编写static代码块来优化程序性能。</strong><br><strong>1）static方法</strong><br>　　static方法一般称作静态方法，由于静态方法不依赖于任何对象就可以进行访问，因此对于静态方法来说，是没有this的，因为它不依附于任何对象，既然都没有对象，就谈不上this了。并且由于这个特性，在静态方法中不能访问类的非静态成员变量和非静态成员方法，因为非静态成员方法/变量都是必须依赖具体的对象才能够被调用。<br>　　但是要注意的是，虽然在静态方法中不能访问非静态成员方法和非静态成员变量，但是在非静态成员方法中是可以访问静态成员方法/变量的。举个简单的例子：</p>
+<p>　　在上面的代码中，由于print2方法是独立于对象存在的，可以直接用过类名调用。假如说可以在静态方法中访问非静态方法/变量的话，那么如果在main方法中有下面一条语句：<br>　　MyObject.print2();<br>　　此时对象都没有，str2根本就不存在，所以就会产生矛盾了。同样对于方法也是一样，由于你无法预知在print1方法中是否访问了非静态成员变量，所以也禁止在静态成员方法中访问非静态成员方法。<br>　　而对于非静态成员方法，它访问静态成员方法/变量显然是毫无限制的。<br>　　因此，如果说想在不创建对象的情况下调用某个方法，就可以将这个方法设置为static。我们最常见的static方法就是main方法，至于为什么main方法必须是static的，现在就很清楚了。因为程序在执行main方法的时候没有创建任何对象，因此只有通过类名来访问。<br>　　另外记住，即使没有显示地声明为static，类的构造器实际上也是静态方法。<br><strong>2）static变量</strong><br>　　static变量也称作静态变量，静态变量和非静态变量的区别是：静态变量被所有的对象所共享，在内存中只有一个副本，它当且仅当在类初次加载时会被初始化。而非静态变量是对象所拥有的，在创建对象的时候被初始化，存在多个副本，各个对象拥有的副本互不影响。<br>　　static成员变量的初始化顺序按照定义的顺序进行初始化。<br><strong>3）static代码块</strong><br>　　static关键字还有一个比较关键的作用就是 用来形成静态代码块以优化程序性能。static块可以置于类中的任何地方，类中可以有多个static块。在类初次被加载的时候，会按照static块的顺序来执行每个static块，并且只会执行一次。<br>　　为什么说static块可以用来优化程序性能，是因为它的特性:只会在类加载的时候执行一次。</p>
+<h2 id="2-静态变量不能出现在方法里面"><a href="#2-静态变量不能出现在方法里面" class="headerlink" title="2. 静态变量不能出现在方法里面"></a>2. 静态变量不能出现在方法里面</h2><p>  无论是静态方法还是普通方法都不行，因为静态这个概念是主要针对类级别的，方法里面的变量是局部变量。方法区里面放的是和堆一样，被所有的线程共享，方法区中包含所有的class和static变量，方法区中包含的都是在整个程序中永远唯一的元素，如class，static变量。<br>？<br>不能定义，但是可以使用，具体规则见<a href="https://blog.csdn.net/doit_kang/article/details/83376985" target="_blank" rel="noopener">https://blog.csdn.net/doit_kang/article/details/83376985</a></p>
+<h2 id="3-构造方法不能用static静态来修饰"><a href="#3-构造方法不能用static静态来修饰" class="headerlink" title="3.构造方法不能用static静态来修饰"></a>3.构造方法不能用static静态来修饰</h2><p>  构造方法不能用static静态来修饰。<a href="https://www.baidu.com/s?wd=%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95&from=1012015a&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLPH9WPyfLP1Tkrjw9rAFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnWcvrHbkrjDLrHb3Pjb4njnsr0" target="_blank" rel="noopener">静态方法</a>可以在未创建对象时调用，从这个角度看，<a href="https://www.baidu.com/s?wd=%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95&from=1012015a&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLPH9WPyfLP1Tkrjw9rAFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnWcvrHbkrjDLrHb3Pjb4njnsr0" target="_blank" rel="noopener">构造方法</a>在对象未创建时调用，可以看作是<a href="https://www.baidu.com/s?wd=%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95&from=1012015a&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLPH9WPyfLP1Tkrjw9rAFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnWcvrHbkrjDLrHb3Pjb4njnsr0" target="_blank" rel="noopener">静态方法</a>。但从另一个方面来看，<a href="https://www.baidu.com/s?wd=%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95&from=1012015a&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLPH9WPyfLP1Tkrjw9rAFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnWcvrHbkrjDLrHb3Pjb4njnsr0" target="_blank" rel="noopener">静态方法</a>不能调用实例方法（无关键字静态的类方法），而<a href="https://www.baidu.com/s?wd=%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95&from=1012015a&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLPH9WPyfLP1Tkrjw9rAFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnWcvrHbkrjDLrHb3Pjb4njnsr0" target="_blank" rel="noopener">构造方法</a>可以调用实例方法，所以<a href="https://www.baidu.com/s?wd=%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95&from=1012015a&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLPH9WPyfLP1Tkrjw9rAFb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnWcvrHbkrjDLrHb3Pjb4njnsr0" target="_blank" rel="noopener">构造方法</a>也不算是静态方法。</p>
+<p>在一个类中访问同一个类的变量：！！！！！！</p>
+<p>首先明白只能访问成员变量，因为局部变量作用域只是在方法内，我们可以让方法里面的局部变量对成员变量进行修改即可（同名，且方法里面的变量不需要指定类型，代表覆盖之前的变量）</p>
+<p>局部变量可以和成员变量重名，不加“this”修饰时，优先使用最近的变量。<br>实际中常常给变量定义一些getXXX{returnXXX}的方法来进行调用参数</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577085428435-16df2316-c09f-4d67-9d73-01d0d581d06a.png#align=left&display=inline&height=288&name=image.png&originHeight=362&originWidth=594&size=22557&status=done&style=none&width=472" alt="image.png"></p>
+<ul>
+<li>char类型用于存放一个字符，值用单引号’表示 (双引号表示字符串)，其长度和short一样，也是16位的，<strong>只能存放一个字符</strong>，超过一个字符就会产生编译错误</li>
+<li>浮点数类型有两种</li>
+</ul>
+<p><em>float 长度为32位</em><br><em>double 长度为64位</em><br><em><strong>注意： 默认的小数值是double类型的</strong></em><br><em>所以 float f = 54.321会出现编译错误，因为54.321的默认类型是 double，其类型 长度为64，超过了float的长度32</em><br><em>在数字后面<strong>加一个字母f</strong>，直接把该数字声明成float类型</em><br><em>float f2 = 54.321<strong>f</strong>,，这样就不会出错了</em><br><em><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577085958923-8c823552-cd30-490b-b91a-a385c774f3ae.png#align=left&display=inline&height=249&name=image.png&originHeight=275&originWidth=614&size=16825&status=done&style=none&width=556" alt="image.png"></em><br>_</p>
+<ul>
+<li>布尔型用于表示真假</li>
+</ul>
+<p>其长度为1<br><em>boolean b1 = true;</em><br><em>boolean b2 = false;</em><br><em>分别代表真假</em></p>
+<p><em>虽然布尔型真正存放的数据是0(false) 1(true)</em><br><em>但是，不能直接使用0 1 进行赋值</em><br><em><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577086020566-3d4348e9-0f23-4e20-9068-e438385f932c.png#align=left&display=inline&height=179&name=image.png&originHeight=179&originWidth=615&size=10209&status=done&style=none&width=615" alt="image.png"></em></p>
+<ul>
+<li>String类型其实<strong>并不是基本类型</strong>，但是它是如此广泛的被使用，常常被误以为是一种基本类型。</li>
+</ul>
+<p>String类型是Immutable的，一旦创建就不能够被改变，更多的关于String的学习，<a href="https://www.yuque.com/aichifandehuahua/tqy8d0/pynxda" target="_blank" rel="noopener">String详解</a></p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><h4 id="转换规则"><a href="#转换规则" class="headerlink" title="转换规则"></a>转换规则</h4><p><a href="https://how2j.cn/k/variable/variable-transfer/264.html" target="_blank" rel="noopener">https://how2j.cn/k/variable/variable-transfer/264.html</a><br>转换规则如图所示</p>
+<p><strong>精度高</strong>的数据类型就像<strong>容量大</strong>的杯子，可以<strong>放更大</strong>的数据<br><strong>精度低</strong>的数据类型就像<strong>容量小</strong>的杯子，只能<strong>放更小</strong>的数据<br>小杯子往大杯子里倒东西，大杯子<strong>怎么都放得下</strong><br>大杯子往小杯子里倒东西，<strong>有的时候放的下</strong>，<strong>有的时候就会有溢出</strong><br>需要注意的一点是<br>虽然short和char都是16位的，长度是一样的<br>但是彼此之间，依然需要进行强制转换<br><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577093853502-ab73cd05-819b-4e4f-ad55-b63100707a9c.png#align=left&display=inline&height=306&originHeight=453&originWidth=639&size=0&status=done&style=none&width=432" alt><br>代码比较复制代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">char</span> c = <span class="string">'A'</span>;</span><br><span class="line">		<span class="keyword">short</span> s = <span class="number">80</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//虽然short和char都是16位的，长度是一样的</span></span><br><span class="line">		<span class="comment">//但是彼此之间，依然需要进行强制转换</span></span><br><span class="line">		c = (<span class="keyword">char</span>) s;</span><br><span class="line">		<span class="comment">//直接进行转换，会出现编译错误</span></span><br><span class="line">		s = c;<span class="comment">//报错</span></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//提示错误s=c的地方报错</span></span><br><span class="line">Error:(<span class="number">12</span>, <span class="number">13</span>) java: 不兼容的类型: 从<span class="keyword">char</span>转换到<span class="keyword">short</span>可能会有损失</span><br></pre></td></tr></table></figure>
+
+<h4 id="低精度向高精度转换"><a href="#低精度向高精度转换" class="headerlink" title="低精度向高精度转换**"></a>低精度向高精度转换**</h4><p>long l = 50;<br>int i = 50;</p>
+<p>l 是long类型的，其类型长度是64位<br>i 是int类型的，其类型长度是32位<br>所以l的精度，比i的精度要高<br>l = i;<br><strong>把i的值赋给l</strong>， 首先l和i彼此的类型是不一样的，那么能否转换就取决于彼此的精度<br>这个例子，是低精度向高精度转换 是可以正常转换的<br>换句话说，int比较小，要放进比较大的long,随便怎么样，都放的进去<img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577093853476-1bbb2e12-05b1-4da4-9dcf-d3a975cc767c.png#align=left&display=inline&height=205&originHeight=220&originWidth=661&size=0&status=done&style=none&width=617" alt><br>代码比较复制代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">50</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">50</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//int比较小，要放进比较大的long,随便怎么样，都放的进去</span></span><br><span class="line">        l = i;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//正常</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="高精度向低精度转换"><a href="#高精度向低精度转换" class="headerlink" title="高精度向低精度转换**"></a>高精度向低精度转换**</h4><p>byte b = 5;<br>int i1 = 10;<br>int i2 = 300;<br>b = i1;<br>b=i2;<br>b的类型是byte,其长度是8，<strong>最大只能放127</strong><br>i1 的类型是int, 其长度是32,最大，反正就是很大了，超过127<br>所以， 把int类型的数据转成为byte类型的数据，<strong>是有风险的</strong><br><strong>有的时候是可以转换的</strong>，比如 b = i1 (i1=10);<br><strong>有的时候不可以转换</strong> 比如 b= i2 (i2=300) 因为放不下了<br>编译器就会提示错误<br>这个时候就只能采用<strong>强制转换</strong>，强制转换的意思就是，转是可以转的，但是不对转换之后的值负责。 风险自担，后果自负<img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577093853455-60eb0c52-4abc-4d56-afd7-2a40af9060c9.png#align=left&display=inline&height=318&originHeight=339&originWidth=635&size=0&status=done&style=none&width=596" alt><br>代码比较复制代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">byte</span> b = <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">int</span> i1 = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">300</span>;</span><br><span class="line">         </span><br><span class="line">        b = (<span class="keyword">byte</span>) i1;</span><br><span class="line">        <span class="comment">//因为i1的值是在byte范围之内，所以即便进行强制转换</span></span><br><span class="line">        <span class="comment">//最后得到的值，也是10</span></span><br><span class="line">        System.out.println(b);</span><br><span class="line">        <span class="comment">//因为i2的值是在byte范围之外，所以就会按照byte的长度进行截取</span></span><br><span class="line">        <span class="comment">//i2的值是300，其对应的二进制数是 100101100</span></span><br><span class="line">        <span class="comment">//按照byte的长度8位进行截取后，其值为 00101100 即44</span></span><br><span class="line">        b =(<span class="keyword">byte</span>) i2;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//查看一个整数对应的二进制的方法：</span></span><br><span class="line">        System.out.println(Integer.toBinaryString(i2));</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h3><ul>
+<li>标识符可以由字母、数字、下划线（_）、美元符（$）组成，但不能包含 @、%、空格等其它特殊字符，不能以数字开头。譬如：123name 就是不合法滴</li>
+<li>标识符不能是 Java 关键字和保留字（ Java 预留的关键字，以后的升级版本中有可能作为关键字），但可以包含关键字和保留字。如：不可以使用 void 作为标识符，但是 Myvoid 可以</li>
+<li>标识符是严格区分大小写的。 所以涅，一定要分清楚 imooc 和 IMooc 是两个不同的标识符哦！</li>
+<li>标识符的命名最好能反映出其作用，做到见名知意</li>
+<li>变量命名只能使用<strong>字母 数字 $ _，</strong>变量第一个字符 只能使用 字母 、$、 <em>，变量第一个字符 不能使用数字。注：</em> 是下划线，不是-减号或者—— 破折号</li>
+<li>在命名的时候，尽量使用完整的单词进行命名，比如name,moveSpeed，而不是使用缩写 n,m。</li>
+<li>不能只使用关键字，但是可以包含关键字</li>
+<li>@、*、”、#都不属于可用符号</li>
+<li>中文也是可以用来命名变量的，但是在实际工作中尽量<strong>别这么干！</strong></li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577083519786-0d10936d-cfaa-45d7-a03b-19fc2bbd0a31.png#align=left&display=inline&height=225&name=image.png&originHeight=321&originWidth=423&size=16702&status=done&style=none&width=296" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1577083577319-bce00875-4449-4442-b954-ebec6e761989.png#align=left&display=inline&height=258&name=image.png&originHeight=366&originWidth=450&size=20614&status=done&style=none&width=317" alt="image.png"></p>
+<h4 id="方法的参数"><a href="#方法的参数" class="headerlink" title="方法的参数"></a>方法的参数</h4><h3 id="Java的格式化输出"><a href="#Java的格式化输出" class="headerlink" title="Java的格式化输出"></a><a href="https://www.cnblogs.com/qunqun/p/8656217.html" target="_blank" rel="noopener">Java的格式化输出</a></h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i>java语法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/28/JAVA%20%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B%EF%BC%88%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%20%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%89/" rel="prev" title="编译及初始化过程（类初始化 对象初始化）">
+      <i class="fa fa-chevron-left"></i> 编译及初始化过程（类初始化 对象初始化）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/28/article/" rel="next" title="java基础语法-String">
+      java基础语法-String <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How2J"><span class="nav-number">1.</span> <span class="nav-text">How2J</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA中的类和对象"><span class="nav-number">1.1.</span> <span class="nav-text">JAVA中的类和对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误："><span class="nav-number">2.</span> <span class="nav-text">错误：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-静态方法里面不能出现this、super"><span class="nav-number">2.1.</span> <span class="nav-text">1.静态方法里面不能出现this、super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-静态变量不能出现在方法里面"><span class="nav-number">2.2.</span> <span class="nav-text">2. 静态变量不能出现在方法里面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-构造方法不能用static静态来修饰"><span class="nav-number">2.3.</span> <span class="nav-text">3.构造方法不能用static静态来修饰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.3.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制类型转换"><span class="nav-number">2.3.2.</span> <span class="nav-text">强制类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转换规则"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">转换规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#低精度向高精度转换"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">低精度向高精度转换**</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高精度向低精度转换"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">高精度向低精度转换**</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量命名规则"><span class="nav-number">2.3.3.</span> <span class="nav-text">变量命名规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法的参数"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">方法的参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java的格式化输出"><span class="nav-number">2.3.4.</span> <span class="nav-text">Java的格式化输出</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="爱吃饭的花花"
+      src="/images/ava.jpg">
+  <p class="site-author-name" itemprop="name">爱吃饭的花花</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yxmhuahua" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yxmhuahua" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:875940287.com" title="E-Mail → mailto:875940287.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">爱吃饭的花花</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'VShaa9LJEiJe0XyGQHDzPsC6-gzGzoHsz',
+      appKey     : '0sMr3d293jagk3SzlVPlaBTS',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
