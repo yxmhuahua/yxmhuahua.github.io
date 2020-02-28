@@ -1890,7 +1890,9 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
 </tr>
 </tbody></table>
 <hr>
-<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p><strong>整型、实型（常量）、字符型数据可以混合运算。运算中，不同类型的数据先转化为同一类型，然后进行运算。</strong><br>转换从低级到高级。<br>低  ————————————&gt;  高<br> <a id="more"></a><br>byte,short,char—&gt; int —&gt; long—&gt; float —&gt; double<br>数据类型转换必须满足如下规则：</p>
+ <a id="more"></a>
+<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p><strong>整型、实型（常量）、字符型数据可以混合运算。运算中，不同类型的数据先转化为同一类型，然后进行运算。</strong><br>转换从低级到高级。<br>低  ————————————&gt;  高</p>
+<p>byte,short,char—&gt; int —&gt; long—&gt; float —&gt; double<br>数据类型转换必须满足如下规则：</p>
 <ul>
 <li><ol>
 <li>不能对boolean类型进行类型转换。</li>
