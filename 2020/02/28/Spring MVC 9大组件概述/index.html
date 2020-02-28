@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/gif/539392/1579139171723-83482235-7323-4f4b-abc3-79af94aecf33.gif#align=left&display=inline&height=20&originHeight=20&originWidth=20&size=0&status=done&style=none&width=20">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/gif/539392/1579139171744-bb1757fa-0103-427b-b7a1-f0e37c369222.gif#align=left&display=inline&height=20&originHeight=20&originWidth=20&size=0&status=done&style=none&width=20">
 <meta property="article:published_time" content="2020-02-28T11:19:11.000Z">
-<meta property="article:modified_time" content="2020-02-28T14:01:14.398Z">
+<meta property="article:modified_time" content="2020-02-28T14:12:33.008Z">
 <meta property="article:author" content="爱吃饭的花花">
 <meta property="article:tag" content="spring框架">
 <meta name="twitter:card" content="summary">
@@ -136,11 +136,6 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -216,7 +211,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:01:14" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:12:33" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,7 +258,7 @@
         <h1 id="Spring-MVC-9大组件概述"><a href="#Spring-MVC-9大组件概述" class="headerlink" title="Spring MVC 9大组件概述"></a>Spring MVC 9大组件概述</h1><p><a href="https://www.cnblogs.com/baichunyu/articles/11157337.html" target="_blank" rel="noopener">https://www.cnblogs.com/baichunyu/articles/11157337.html</a></p>
 <hr>
 <p>　<strong>SpringMVC中的Servlet一共有三个层次，分别是HttpServletBean、FrameworkServlet和 DispatcherServlet。HttpServletBean直接继承自java的HttpServlet，其作用是将Servlet中配置的参数设置到相应的属性；FrameworkServlet初始化了WebApplicationContext，DispatcherServlet初始化了自身的9个组件。</strong><br>**　　本篇博客的内容就是对9个组件做个简单概述。**<br>**　　在学习9个组件之前，我们需要先了解Handler的概念，也就是处理器。它直接应对着MVC中的C也就是Controller层，它的具体表现形式有很多，可以是类，也可以是方法。在Controller层中@RequestMapping标注的所有方法都可以看成是一个Handler，只要可以实际处理请求就可以是Handler。**</p>
-<h2 id="（1）HandlerMapping"><a href="#（1）HandlerMapping" class="headerlink" title="（1）HandlerMapping"></a>（1）HandlerMapping</h2><p>　　是用来查找Handler的。在SpringMVC中会有很多请求，每个请求都需要一个Handler处理，具体接收到一个请求之后使用哪个Handler进行处理呢？这就是HandlerMapping需要做的事。<br>1 public interface HandlerMapping<br>2 {<br>3     HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;<br>4 }<br>　　我们可以看到HandlerMapping接口中只定义了一个方法，就是通过request找到HandlerExecutionChain，而HandlerExecutionChain包装了一个Handler和一组Interceptors。</p>
+<h2 id="（1）HandlerMapping"><a href="#（1）HandlerMapping" class="headerlink" title="（1）HandlerMapping"></a>（1）HandlerMapping</h2><p>　　是用来查找Handler的。在SpringMVC中会有很多请求，每个请求都需要一个Handler处理，具体接收到一个请求之后使用哪个Handler进行处理呢？这就是HandlerMapping需要做的事。<br>public interface HandlerMapping<br>{<br>     HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;<br> }<br>　　我们可以看到HandlerMapping接口中只定义了一个方法，就是通过request找到HandlerExecutionChain，而HandlerExecutionChain包装了一个Handler和一组Interceptors。</p>
 <h2 id="（2）-HandlerAdapter"><a href="#（2）-HandlerAdapter" class="headerlink" title="（2） HandlerAdapter"></a>（2） HandlerAdapter</h2><p>　　从名字上看，它就是一个适配器。因为SpringMVC中的Handler可以是任意的形式，只要能处理请求就ok，但是Servlet需要的处理方法的结构却是固定的，都是以request和response为参数的方法。如何让固定的Servlet处理方法调用灵活的Handler来进行处理呢？这就是HandlerAdapter要做的事情。任意形式的Handler通过使用适配器，可以“转换”成固定形式，然后交给Servlet来处理。每种Handler都要有对应的HandlerAdapter才能处理请求。<br>　　 <a id="more"></a><br><img src="https://cdn.nlark.com/yuque/0/2020/gif/539392/1579139171730-aee1630d-fb64-4b93-8467-3992e214d47f.gif#align=left&display=inline&height=20&originHeight=20&originWidth=20&size=0&status=done&style=none&width=20" alt><br> 1 public interface HandlerAdapter {<br> 2<br> 3     /**<br> 4      * 判断是否支持传入的handler<br> 5      <em>/<br> 6     boolean supports(Object handler);<br> 7<br> 8     /*</em><br> 9      * 使用给定的handler处理请求<br>10      <em>/<br>11     ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception;<br>12<br>13     /*</em><br>14      * 返回上次修改时间，可以返回-1表示不支持<br>15      */<br>16     long getLastModified(HttpServletRequest request, Object handler);<br>17<br>18 }<br><img src="https://cdn.nlark.com/yuque/0/2020/gif/539392/1579139171721-e0637c97-0630-4b86-addc-b0c01413e80a.gif#align=left&display=inline&height=20&originHeight=20&originWidth=20&size=0&status=done&style=none&width=20" alt></p>
 <h2 id="（3）HandlerExceptionResolver"><a href="#（3）HandlerExceptionResolver" class="headerlink" title="（3）HandlerExceptionResolver"></a>（3）HandlerExceptionResolver</h2><p>　　其它组件都是用来干活的。在干活的过程中难免会出现问题，出问题后怎么办呢？这就需要有一个专门的角色对异常情况进行处理，在SpringMVC中就是HandlerExceptionResolver。具体来说，此组件的作用是根据异常设置ModelAndView，之后再交给render方法进行渲染。我们来看下HandlerExceptionResolver的接口定义：<br><img src="https://cdn.nlark.com/yuque/0/2020/gif/539392/1579139171723-83482235-7323-4f4b-abc3-79af94aecf33.gif#align=left&display=inline&height=20&originHeight=20&originWidth=20&size=0&status=done&style=none&width=20" alt><br>1 public interface HandlerExceptionResolver {<br>2<br>3     ModelAndView resolveException(<br>4             HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex);<br>5<br>6 }<br><img src="https://cdn.nlark.com/yuque/0/2020/gif/539392/1579139171744-bb1757fa-0103-427b-b7a1-f0e37c369222.gif#align=left&display=inline&height=20&originHeight=20&originWidth=20&size=0&status=done&style=none&width=20" alt><br>　　从上面的分析中我们可以知道HandlerExceptionResolver只能处理页面渲染之前的异常，页面渲染过程中的异常，它是不能处理的，这时可以让容器跳转到指定的错误页面来处理异常。</p>
 <h2 id="（4）ViewResolver"><a href="#（4）ViewResolver" class="headerlink" title="（4）ViewResolver"></a>（4）ViewResolver</h2><p>　　ViewResolver用来将String类型的视图名和Locale解析为View类型的视图。View是用来渲染页面的，也就是将程序返回的参数填入模板里，生成html（也可能是其它类型）文件。这里就有两个关键问题：使用哪个模板？用什么技术（规则）填入参数？这其实是ViewResolver主要要做的工作，ViewResolver需要找到渲染所用的模板和所用的技术（也就是视图的类型）进行渲染，具体的渲染过程则交由不同的视图自己完成。<br>1 public interface ViewResolver {<br>2<br>3     View resolveViewName(String viewName, Locale locale) throws Exception;<br>4<br>5 }</p>
@@ -371,9 +366,8 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/">
-        
-          <span class="site-state-item-count">17</span>
+          <a href="/archives">
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

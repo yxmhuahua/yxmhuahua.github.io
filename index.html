@@ -126,11 +126,6 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -296,7 +291,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 21:28:05 / 修改时间：21:37:01" itemprop="dateCreated datePublished" datetime="2020-02-28T21:28:05+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 21:28:05 / 修改时间：22:11:17" itemprop="dateCreated datePublished" datetime="2020-02-28T21:28:05+08:00">2020-02-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,244 +329,14 @@
 
       
           <h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h3 id="关键字-1"><a href="#关键字-1" class="headerlink" title="关键字"></a>关键字</h3><p><img src="/2020/02/28/JAVA%E5%85%B3%E9%94%AE%E5%AD%97/1.png" alt="img"></p>
-<p>一）总表：java关键字共53个（其中包含两个保留字const，goto）</p>
-<p><strong>abstract assert boolean break byte case catch char class const continue    default    do    double    else</strong><br><strong>enum    extends    final    finally    float for    goto    if    implements    import instanceof    int    interface    long    native</strong><br><strong>new    package    private    protected    public return    strictfp    short    static    super switch    synchronized    this    throw    throws</strong><br>*<em>transient    try    void    volatile    while true    false    null    *</em></p>
-<p>（二）大致含义<br>      关键字                          含义</p>
-<ol>
-<li>abstract    表明类或者成员方法具有抽象属性</li>
-<li>assert    断言，用来进行程序调试</li>
-<li>boolean    基本数据类型之一，布尔类型</li>
-<li>break    提前跳出一个块</li>
-<li>byte    基本数据类型之一，字节类型</li>
-<li>case    用在switch语句之中，表示其中的一个分支</li>
-<li>catch    用在异常处理中，用来捕捉异常</li>
-<li>char    基本数据类型之一，字符类型</li>
-<li>class    声明一个类</li>
-<li>const    保留关键字，没有具体含义</li>
-<li>continue    回到一个块的开始处</li>
-<li>default    默认，例如，用在switch语句中，表明一个默认的分支</li>
-<li>do    用在do-while循环结构中</li>
-<li>double    基本数据类型之一，双精度浮点数类型</li>
-<li>else    用在条件语句中，表明当条件不成立时的分支</li>
-<li>enum    枚举</li>
-<li>extends    表明一个类型是另一个类型的子类型，这里常见的类型有类和接口</li>
-<li>final    用来说明最终属性，表明一个类不能派生出子类，或者成员方法不能被覆盖，或者成员域的值不能被改变，用来定义常量</li>
-<li>finally    用于处理异常情况，用来声明一个基本肯定会被执行到的语句块</li>
-<li>float    基本数据类型之一，单精度浮点数类型</li>
-<li>for    一种循环结构的引导词</li>
-<li>goto    保留关键字，没有具体含义</li>
-<li>if    条件语句的引导词</li>
-<li>implements    表明一个类实现了给定的接口</li>
-<li>import    表明要访问指定的类或包</li>
-<li>instanceof    用来测试一个对象是否是指定类型的实例对象</li>
-<li>int    基本数据类型之一，整数类型</li>
-<li>interface    接口</li>
-<li>long    基本数据类型之一，长整数类型</li>
-<li>native    用来声明一个方法是由与计算机相关的语言（如C/C++/FORTRAN语言）实现的</li>
-<li>new    用来创建新实例对象</li>
-<li>package    包</li>
-<li>private    一种访问控制方式：私用模式</li>
-<li>protected    一种访问控制方式：保护模式</li>
-<li>public    一种访问控制方式：共用模式</li>
-<li>return    从成员方法中返回数据</li>
-<li>short    基本数据类型之一,短整数类型</li>
-<li>static    表明具有静态属性</li>
-<li>strictfp    用来声明FP_strict（单精度或双精度浮点数）表达式遵循IEEE 754算术规范 [1] </li>
-<li>super    表明当前对象的父类型的引用或者父类型的构造方法</li>
-<li>switch    分支语句结构的引导词</li>
-<li>synchronized    表明一段代码需要同步执行</li>
-<li>this    指向当前实例对象的引用</li>
-<li>throw    抛出一个异常</li>
-<li>throws    声明在当前定义的成员方法中所有需要抛出的异常</li>
-<li>transient    声明不用序列化的成员域</li>
-<li>try    尝试一个可能抛出异常的程序块</li>
-<li>void    声明当前成员方法没有返回值</li>
-<li>volatile    表明两个或者多个变量必须同步地发生变化</li>
-<li>while    用在循环结构中</li>
-</ol>
-<h1 id="访问控制关键字"><a href="#访问控制关键字" class="headerlink" title="访问控制关键字"></a>访问控制关键字</h1><p>1、public：public表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用<br>2、private：private表示私有，私有的意思就是除了class自己之外，任何人都不可以直接使用。<br>3、protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private。<br>4、friendly权限是java的默认权限，也称作包（package）访问权限，只要不加private、public、protect的就是friendly访问权限，所有的成员仅限同一个包内的成员访问（当然包含自己）。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1576733250856-780aa2b9-3b0f-4925-8e5f-630aa7e3f2db.png#align=left&display=inline&height=142&originHeight=142&originWidth=600&size=0&status=done&style=none&width=600" alt><br>5、default<br>总的来说，<code>default</code>的用法不多，只有两种:<br>在<code>switch</code>语句的时候使用<code>default</code><br>在定义接口的时候使用<code>default</code>来修饰具体的方法</p>
-<h1 id="类、方法和变量修饰符"><a href="#类、方法和变量修饰符" class="headerlink" title="类、方法和变量修饰符"></a>类、方法和变量修饰符</h1><table>
-<thead>
-<tr>
-<th>abstract</th>
-<th>声明抽象</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>class</td>
-<td>类</td>
-</tr>
-<tr>
-<td>extends</td>
-<td>扩充,继承</td>
-</tr>
-<tr>
-<td>final</td>
-<td>最终值,不可改变的</td>
-</tr>
-<tr>
-<td>implements</td>
-<td>实现（接口）</td>
-</tr>
-<tr>
-<td>interface</td>
-<td>接口</td>
-</tr>
-<tr>
-<td>native</td>
-<td>本地，原生方法（非 Java 实现）</td>
-</tr>
-<tr>
-<td>new</td>
-<td>新,创建</td>
-</tr>
-<tr>
-<td>static</td>
-<td>静态</td>
-</tr>
-<tr>
-<td>strictfp</td>
-<td>严格,精准</td>
-</tr>
-<tr>
-<td>synchronized</td>
-<td>线程,同步</td>
-</tr>
-<tr>
-<td>transient</td>
-<td>短暂</td>
-</tr>
-<tr>
-<td>volatile</td>
-<td>易失</td>
-</tr>
-</tbody></table>
-<h2 id="abstract："><a href="#abstract：" class="headerlink" title="abstract："></a>abstract：</h2><p>用abstract修饰的类，即抽象类；</p>
-<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>** 抽象类（abstract）的使用：**当父类的某些方法不确定时，可以用abstract关键字来修饰该方法[抽象方法]，用abstract来修饰该类[抽象类]。</p>
-<ul>
-<li>用abstract关键字来表达的类，其表达形式为：（public）abstract class 类名{}</li>
-<li>抽象类不能被直接实例化，也就是说我们没法直接new 一个抽象类。抽象类本身就代表了一个类型，无法<br>确定为一个具体的对象，所以不能实例化就合乎情理了，只能有它的继承类实例化。</li>
-<li>抽象类中不一定要包含abstract方法。也就是了，抽象中可以没有abstract方法，但是一旦类中包含了abstract方法，那类该类必须声明为abstract类。</li>
-<li>抽象类虽然不能被实例化，但可以有自己的构造方法（如果我们不写，编译器会自动默认一个无参构造方法）</li>
-<li>和普通的继承类一样，在new 一个子类对象时会优先调用父类（抽象父类）的构造器初始化，然后再调用子类的构造器。</li>
-<li>对于抽象类中的非statci(静态)和非abstract(抽象)方法中的this关键字（静态方法中不能有关键字this）代表的是它的继承类，而非抽象类本身，这个好理解，因为抽象类本身不能被实例化。如果有多个继承类，谁调用this就代表谁。</li>
-<li>抽象类与接口（interface）有很大的不同之处，接口中不能有实例方法去实现业务逻辑，而抽象类<br>中可以有实例方法，并实现业务逻辑，比如我们可以在抽象类中创建和销毁一个线程池。</li>
-<li>抽象类不能使用final关键字修饰，因为final修饰的类是无法被继承，而对于抽象类来说就是<br>需要通过继承去实现抽象方法，这又会产生矛盾。</li>
-</ul>
-<h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><ul>
-<li>用abstract修饰的方法，即抽象方法。抽象方法不能有方法主体。格式如下：abstract void xxx();所以抽象方法跟普通方法是有区别的，它没有自己的主体（没有{}包起来的业务逻辑），跟接口中的方法有点类似。所以我们没法直接调用抽象方法</li>
-<li>抽象方法不能用private修饰，因为抽象方法必须被子类实现（覆写），而private权限对于子类来<br>说是不能访问的，所以就会产生矛盾</li>
-<li>抽象方法也不能用static修饰，如果用static修饰了，那么可以直接通过类名调用，而抽象方法压根就没有主体，没有任何业务逻辑，没法直接调用抽象方法，因为这样毫无意义。</li>
-<li>抽象类可以被继承，但是 当继承的父类是抽象类时，需要将抽象类中的所有抽象方法全部实现。也就是说如果一个类继承了一个抽象类，那么它必须全部覆写抽象类中的抽象方法，当然也可以不全部覆写，如果<br>不覆写全部抽象方法则这个子类也必须是抽象类。</li>
-</ul>
-<h3 id="抽象类和方法的作用"><a href="#抽象类和方法的作用" class="headerlink" title="抽象类和方法的作用"></a>抽象类和方法的作用</h3><ul>
-<li>当多个类中出现了相同的功能，但是功能主体不同这是可以进行向上提取的。这时，只提取功能定义，而不抽取功能主体，所以，抽象类是为了把相同的但不确定的东西的提取出来，为了以后的重用。定义成抽象类的目的，就是为了在子类中实现抽象类。</li>
-<li>由于抽象类不能被实例化，最大的好处就是通过方法的覆盖来实现多态的属性。也就是运行期绑定</li>
-<li>抽象类将事物的共性的东西提取出来，由子类继承去实现，代码易扩展、易维护。</li>
-</ul>
-<hr>
-<h2 id="classs"><a href="#classs" class="headerlink" title="classs"></a>classs</h2><hr>
-<h2 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h2><ul>
-<li><p>父类也叫基类、超类</p>
-</li>
-<li><p>子类也叫派生类</p>
-</li>
-<li><p>在继承的而关系中，<strong>“**</strong>子类就是一个父类<strong>**“</strong>。也就是说，子类可以被当做父类来看待。例如<strong>父类是员工，子类是老师</strong>，那么我们可以说<strong>”老师就是一个员工“</strong>。</p>
-</li>
-<li><p><strong>关系是“is - a”</strong>，例如“<strong>老师 is a 员工</strong>”</p>
-</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/539392/1576806472087-b5024af5-9667-4f88-8af6-d2e2e10031ad.png#align=left&display=inline&height=256&originHeight=296&originWidth=673&size=0&status=done&style=none&width=583" alt><br>1.1成员变量<br>类变量从该类的准备阶段起开始存在，直到系统完全销毁这个类，类变量的作用域与这个类的生存范围相同；</p>
-<p>而实例变量则从该类的实例被创建起开始存在，直到系统完全销毁这个实例，实例变量的作用域与对应实例的生存范围相同。</p>
-<p>正是基于这个原因，可以把类变量和实例变量统称为成员变量。其中类变量可以理解为类成员变量，它作为类本身的一个成员，与类本身共存亡；实例变量则可以理解为实例成员变量，它作为实例的一个成员与实例共存亡。</p>
-<p>只要类存在，类就可以访问类变量         类.类变量</p>
-<p>只要实例存在，实例就可以访问实例变量        实例.实例变量</p>
-<p>当然实例也可以访问类变量。但是需要注意的是因为实例不拥有类变量，所以通过实例来访问类变量进行操作，实际上是对类变量进行操作 ，当有其他实例来访问类变量时，访问的类变量是被对象访问操作过的类变量。</p>
-<p>成员变量无需显示初始化，只要为一个类定义了类变量或实例变量，系统就会在这个类的准备阶段或创建该类的实例时进行默认初始化。</p>
-<p>1.2局部变量</p>
-<p>局部变量根据定义形式的不同，又可以分为如下三种：</p>
-<p>形参：在定义方法签名时定义的变量，形参的作用域在整个方法中都有效</p>
-<p>方法局部变量：在方法体内定义的局部变量，它的作用域是从定义该变量的地方生效，到该方法结束时失效</p>
-<p>代码块局部变量：这个局部变量的作用域从定义该变量的地方生效，到该代码结束时失效。</p>
-<p>一个变量只在一对{}中起作用。。</p>
-<p>java允许局部变量和成员变量同名，如果方法中局部变量和成员变量同名，局部变量就会覆盖成员变量，如果需要在这个方法中引用被覆盖成员变量，则可使用<strong>this（对于实例变量）</strong>或类名（对于类变量）作为调用者来限定访问成员变量。</p>
-<h3 id="继承的格式"><a href="#继承的格式" class="headerlink" title="继承的格式"></a>继承的格式</h3><h4 id="定义父类的格式：-一个普通的类定义"><a href="#定义父类的格式：-一个普通的类定义" class="headerlink" title="定义父类的格式：(一个普通的类定义)"></a>定义父类的格式：(一个普通的类定义)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 父类名称</span>&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="定义子类的格式"><a href="#定义子类的格式" class="headerlink" title="定义子类的格式"></a>定义子类的格式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 子类名称 <span class="keyword">extends</span> 父类名称</span>&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="继承中成员变量的访问特点"><a href="#继承中成员变量的访问特点" class="headerlink" title="继承中成员变量的访问特点"></a>继承中成员变量的访问特点</h3><h3 id="成员变量之间的访问-变量不重名的情况"><a href="#成员变量之间的访问-变量不重名的情况" class="headerlink" title="成员变量之间的访问 (变量不重名的情况)"></a>成员变量之间的访问 (变量不重名的情况)</h3><p><strong>先创立一个父类Fu</strong><br>public class Fu {<br>   public int numFu = 10;  //关键字为public，可以直接通过（对象.变量名）访问，方便说明问题<br>}<br><strong>再创立一个子类Zi</strong><br>public class Zi extends Fu{<br>   public int numZi = 20;<br>}<br>** 在main中分别建立父类和子类的对象**<br>public class Demo02ExtendsField {<br>   public static void main(String[] args) {<br>       //创建父类对象<br>       Fu fu = new Fu();<br>       //父类只能找到自己的成员numFu，并没有找到子类的成员numZi<br>       System.out.println(fu.numFu);</p>
-<pre><code>//创立一个子类对象
-Zi zi = new Zi();
-//子类对象既可以打印父类的成员numFu，也可以打印自己的成员numZi
-//还是那句&quot;先人不知道后人的事情，而后人知道先人的事情&quot;
-System.out.println(zi.numFu);
-System.out.println(zi.numZi);</code></pre><p>   }<br>}</p>
-<h4 id="成员变量之间的访问-变量重名的情况"><a href="#成员变量之间的访问-变量重名的情况" class="headerlink" title="成员变量之间的访问 (变量重名的情况)"></a>成员变量之间的访问 (变量重名的情况)</h4><p>有两种情况：</p>
-<ul>
-<li>直接通过对象访问成员变量：这情况等号左边是谁，就优先用谁，没有则向上找</li>
-<li>间接通过成员方法访问成员变量，这情况<strong>该方法属于谁，就优先用谁，没有则向上找</strong></li>
-</ul>
-<p>假设现在父类 Fu 和子类 Zi 都有一个变量名叫num<br>Fu 类<br>public class Fu {<br>   public int num = 10;</p>
-<p>   public void methodFu(){<br>       //这里打印的num，一定是本类的，不会再往下找子类的<br>       System.out.println(num);<br>   }<br>}<br>Zi类</p>
-<p>public class Zi extends Fu{<br>   public int num = 20;</p>
-<p>   public void methodZi(){<br>       //这里打印的num，如果本类有，就优先打印本类的，如果没有再往上找<br>       System.out.println(num);<br>   }<br>}</p>
-<ul>
-<li><strong>第一种情况：直接通过对象访问成员变量</strong></li>
-</ul>
-<p>等号左边是谁，就优先用谁，没有则向上找。Fu fu = new Zi();等号的左边是父类<br>public class Demo02ExtendsField {<br>   public static void main(String[] args) {<br>    // Zi zi = new Fu(); <strong>不能通过父类来构造子类，先人（父类）根本不知道后人（子类）长什么样子</strong><br>       Fu fu = new Zi(); //<strong>可以通过子类来构造父类，这时等号左边是父类(即按照实例化参照的类来判断)</strong><br>       System.out.println(fu.num);  //10，打印的是父类的num<br>   }<br>}</p>
-<ul>
-<li><strong>第二种情况：间接通过成员方法访问成员变量</strong></li>
-</ul>
-<p>public class Demo02ExtendsField {<br>   public static void main(String[] args) {</p>
-<pre><code>Fu fu = new Fu();
-Zi zi = new Zi();
-//打印的是父类的num，因为该类没有继承其它类，他自己肯定有一个num，才能写出这个方法
-fu.methodFu();  //父类的num 10，补充：没有fu.methodZi(), 先人不知道后人的方法
-//如果子类有一个num，那就优先打印本类的，没有的话再往父类那里找
-zi.methodZi();  //子类的num 20
-//重点！**子类用的是父类的方法打印num，这就要看这个方法属于谁，是谁定义的这个方法**
-//因为methodFu()这个方法是属于父类的，打印的当然就是父类的num
-zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
-<h4 id="区分子类方法中的重名"><a href="#区分子类方法中的重名" class="headerlink" title="区分子类方法中的重名"></a>区分子类方法中的重名</h4><p>假如有好多个num，父类有一个，子类有两个，怎么才能正确地打印想要的那个num呢？<br><strong>父类</strong><br>public class Fu {<br>   public int num = 10;<br>}<br><strong>子类</strong><br>public class Zi extends Fu {<br>   public int num = 20;</p>
-<p>   public void methodZi(){<br>       int num = 30;<br>       System.out.println(num);      //30, 局部变量<br>       System.out.println(this.num); //20, 本类的成员变量<br>       System.out.println(super.num);//10, 父类的成员变量<br>   }<br>}<br>通过结果看看子类方法 methodZi() 能不能正确区分三个num</p>
-<p>public class Demo03Main {<br>   public static void main(String[] args) {<br>       Zi zi = new Zi();<br>       zi.methodZi();  //30, 20, 10<br>   }<br>}<br><strong>总结</strong>：要想正确地打印想要的num，可以这样打<br>局部变量，上面的那个num = 30，就可以直接写<br>本类的成员变量，上面的num = 20, 用this.成员变量名<br>父类的成员变量，上面的num = 10, 用super.成员变量名</p>
-<h4 id="继承中成员方法重名的问题"><a href="#继承中成员方法重名的问题" class="headerlink" title="继承中成员方法重名的问题"></a>继承中成员方法重名的问题</h4><p>假如子类和父类都有一个方法叫 method() , 那怎么知道用的是哪一个呢？<br>父类<br>public class Fu {<br>   public void method(){<br>       System.out.println(“父类重名方法执行”);<br>   }<br>}<br>子类<br>public class Zi extends Fu {<br>   public void method(){<br>       System.out.println(“子类重名方法执行”);<br>   }<br>}<br>在main中调用 method() 方法<br>public class Demo04Main {<br>   public static void main(String[] args) {<br>       Fu fu1 = new Fu();<br>       Fu fu2 = new Zi(); //通过子类来构造fu2<br>       Zi zi = new Zi();<br>       fu1.method(); //父类重名方法执行, 用的是父类方法<br>       fu2.method(); //子类重名方法执行，用的是子类方法<br>       zi.method();  //子类重名方法执行， 用的是子类方法<br>   }<br>}<br><strong>结论 :</strong><br>创建的对象是谁，用谁的类来构造对象的，就优先用谁，如果没有就向上找。比如Fu fu2 = new Zi();，fu2是用子类来构造的，那fu2.method()就是用的子类的方法<br>注意！无论是成员变量还是成员方法，如果没有都是向上找父类，绝对不会向下找子类的。</p>
-<h4 id="继承方法中的覆盖重写"><a href="#继承方法中的覆盖重写" class="headerlink" title="继承方法中的覆盖重写"></a>继承方法中的覆盖重写</h4><p>由 继承中成员方法重名的问题，我们可以引出重写（Override）的概念<br>重写：在继承关系中，方法的名称一样，参数列表也一样<br>重写 (Override) 和 重载 (Overload) 的区别<br>重写：方法的名称一样，参数列表【也一样】。也叫覆盖、覆写<br>重载：方法的名称一样，参数列表【不一样】。</p>
-<h3 id="覆盖重写的注意事项"><a href="#覆盖重写的注意事项" class="headerlink" title="覆盖重写的注意事项"></a>覆盖重写的注意事项</h3><p>必须保证父子类之间方法的名称相同，参数列表也相同，否则无法进行覆盖重写<br><strong>注解：</strong><br><strong>@Override</strong>，这个注解写在方法的前面，用来检验是不是有效的覆盖重写，例如当方法名写错了，@Override底下就会出现红色的波浪线，提示你这不是有效的覆盖重写。</p>
-<p>public class Zi extends Fu {<br>   @Override<br>   public void method(){<br>       System.out.println(“子类重名方法执行”);<br>   }<br>}<br>这个注解可写可不写，但是强烈推荐把它写上去。<br><strong>子类方法的返回值必须【小于等于】父类方法的返回值范围。java.lang.Object是所有类的公共最高父类（祖宗类），每个类都默认继承了它，例如String类就是Object的子类。下面代码会报错，是因为返回值的范围问题</strong><br><strong>父类</strong><br>public class Fu {<br>   public String method(){<br>       System.out.println(“父类重名方法执行”);<br>   }<br>}<br>子类<br>public class Zi extends Fu {<br>   @Override<br>   public Object method(){  //范围：Object &gt; String 报错<br>       System.out.println(“子类重名方法执行”);<br>   }<br>}<br>子类方法的权限必须【大于等于】父类方法的权限修饰符。权限的排名：public &gt; protected &gt; (default) &gt; private。备注：（default）不是关键字default，而是什么都不写，留空，例如：<br>public class Fu{<br>   int num; //num的访问权限是default<br>}<br><strong>下面的代码会因为重写方法的权限问题而报错：</strong><br>父类<br>public class Fu {<br>   public void method(){<br>       System.out.println(“父类重名方法执行”);<br>   }<br>}<br>子类<br>public class Zi extends Fu {<br>   @Override<br>   protected void method(){  //protected &lt; public 报错<br>       System.out.println(“子类重名方法执行”);<br>   }<br>}</p>
-<hr>
-<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><hr>
-<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><hr>
-<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><h4 id="super关键字的三种用法总结"><a href="#super关键字的三种用法总结" class="headerlink" title="super关键字的三种用法总结"></a>super关键字的三种用法总结</h4><ul>
-<li>用法1</li>
-</ul>
-<p>在子类的成员方法中，访问父类的成员变量，比如：<br>父类<br>public class Fu {<br>public int num = 10;<br>}<br>子类<br>public class Zi extends Fu {<br>public int num = 20;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void methodZi()&#123;</span><br><span class="line">   &#x2F;&#x2F; System.out.println(num);  这样打印的一定是本类的num</span><br><span class="line">    System.out.println(super.num); &#x2F;&#x2F;打印的是父类的num</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>}</p>
-<ul>
-<li>用法2</li>
-</ul>
-<p>在子类的成员方法中，访问父类的成员方法，比如：<br>父类<br>public class Fu {<br>public void methodFu(){<br>System.out.println(“父类的成员方法执行”);<br>}<br>}<br>子类<br>public class Zi extends Fu{<br>public void methodZi(){<br>super.methodFu(); //访问父类的methodFu()方法<br>System.out.println(“子类的成员方法执行”);<br>}<br>}<br>在main中执行子类的方法<br>public class Demo07Main {<br>public static void main(String[] args) {<br>Zi zi = new Zi();<br>zi.methodZi();<br>}<br>}<br>/*输出结果：<br>父类的成员方法执行<br>子类的成员方法执行<br>*/</p>
-<ul>
-<li>用法3</li>
-</ul>
-<p><strong>在子类的构造方法中，访问父类的构造方法</strong>。就在 . 继承中构造方法的访问特点 中，请自行查阅。</p>
-<h4 id="this关键字的三种用法"><a href="#this关键字的三种用法" class="headerlink" title="this关键字的三种用法"></a>this关键字的三种用法</h4><p>概述</p>
-<ol>
-<li>在本类的成员方法中，访问本类的成员变量</li>
-<li>在本类的成员方法中，访问本类的另一个成员方法</li>
-<li>在本类的构造方法中，访问本类的另一个构造方法</li>
-</ol>
-<p>代码说明<br>public class Zi extends Fu {<br>private int num = 10;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public Zi()&#123;</span><br><span class="line">    this(123);  &#x2F;&#x2F;9.1.3 在本类的无参构造中调用有参构造</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public Zi(int num)&#123;</span><br><span class="line">    this.num &#x3D; num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void methodZi()&#123;</span><br><span class="line">    System.out.println(this.num); &#x2F;&#x2F;9.1.1 在本类的成员方法中，访问本类的成员变量</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void methodA()&#123;</span><br><span class="line">    System.out.println(&quot;A方法&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void methodB()&#123;</span><br><span class="line">    this.methodA();  &#x2F;&#x2F;9.1.2 在本类的成员方法中，访问本类的另一个成员方法</span><br><span class="line">    System.out.println(&quot;B方法&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>9.3 注意事项</p>
-<ul>
-<li>在构造方法中调用this，那这个this调用必须是该函数中的第一个语句，也是唯一的一个</li>
-<li>super和this两种在构造调用中，不能同时使用。两个都要排在第一行</li>
-</ul>
-<h3 id="关键字的具体用法（语法语句规则）"><a href="#关键字的具体用法（语法语句规则）" class="headerlink" title="关键字的具体用法（语法语句规则）"></a>关键字的具体用法（语法语句规则）</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/28/JAVA%E5%85%B3%E9%94%AE%E5%AD%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -806,7 +571,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:01:14" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:12:33" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -846,7 +611,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
           <h1 id="Spring-MVC-9大组件概述"><a href="#Spring-MVC-9大组件概述" class="headerlink" title="Spring MVC 9大组件概述"></a>Spring MVC 9大组件概述</h1><p><a href="https://www.cnblogs.com/baichunyu/articles/11157337.html" target="_blank" rel="noopener">https://www.cnblogs.com/baichunyu/articles/11157337.html</a></p>
 <hr>
 <p>　<strong>SpringMVC中的Servlet一共有三个层次，分别是HttpServletBean、FrameworkServlet和 DispatcherServlet。HttpServletBean直接继承自java的HttpServlet，其作用是将Servlet中配置的参数设置到相应的属性；FrameworkServlet初始化了WebApplicationContext，DispatcherServlet初始化了自身的9个组件。</strong><br>**　　本篇博客的内容就是对9个组件做个简单概述。**<br>**　　在学习9个组件之前，我们需要先了解Handler的概念，也就是处理器。它直接应对着MVC中的C也就是Controller层，它的具体表现形式有很多，可以是类，也可以是方法。在Controller层中@RequestMapping标注的所有方法都可以看成是一个Handler，只要可以实际处理请求就可以是Handler。**</p>
-<h2 id="（1）HandlerMapping"><a href="#（1）HandlerMapping" class="headerlink" title="（1）HandlerMapping"></a>（1）HandlerMapping</h2><p>　　是用来查找Handler的。在SpringMVC中会有很多请求，每个请求都需要一个Handler处理，具体接收到一个请求之后使用哪个Handler进行处理呢？这就是HandlerMapping需要做的事。<br>1 public interface HandlerMapping<br>2 {<br>3     HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;<br>4 }<br>　　我们可以看到HandlerMapping接口中只定义了一个方法，就是通过request找到HandlerExecutionChain，而HandlerExecutionChain包装了一个Handler和一组Interceptors。</p>
+<h2 id="（1）HandlerMapping"><a href="#（1）HandlerMapping" class="headerlink" title="（1）HandlerMapping"></a>（1）HandlerMapping</h2><p>　　是用来查找Handler的。在SpringMVC中会有很多请求，每个请求都需要一个Handler处理，具体接收到一个请求之后使用哪个Handler进行处理呢？这就是HandlerMapping需要做的事。<br>public interface HandlerMapping<br>{<br>     HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;<br> }<br>　　我们可以看到HandlerMapping接口中只定义了一个方法，就是通过request找到HandlerExecutionChain，而HandlerExecutionChain包装了一个Handler和一组Interceptors。</p>
 <h2 id="（2）-HandlerAdapter"><a href="#（2）-HandlerAdapter" class="headerlink" title="（2） HandlerAdapter"></a>（2） HandlerAdapter</h2><p>　　从名字上看，它就是一个适配器。因为SpringMVC中的Handler可以是任意的形式，只要能处理请求就ok，但是Servlet需要的处理方法的结构却是固定的，都是以request和response为参数的方法。如何让固定的Servlet处理方法调用灵活的Handler来进行处理呢？这就是HandlerAdapter要做的事情。任意形式的Handler通过使用适配器，可以“转换”成固定形式，然后交给Servlet来处理。每种Handler都要有对应的HandlerAdapter才能处理请求。<br></p>
           <!--noindex-->
             <div class="post-button">
@@ -1399,9 +1164,8 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/">
-        
-          <span class="site-state-item-count">17</span>
+          <a href="/archives">
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
