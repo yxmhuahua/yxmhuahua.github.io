@@ -1163,7 +1163,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fff406;
+  background: #d030ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1485,7 +1485,7 @@ pre .javascript .function {
   }
 }
 body {
-  background: url("/images/backGround.jpg");
+  background: url("/images/backGround1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -1554,8 +1554,6 @@ body {
   color: #f7f7f7;
 }
 .site-meta {
-  padding: 20px 0px;
-  color: #ff6a6a;
   background: #ff6a6a;
 }
 .site-subtitle {
@@ -1572,6 +1570,18 @@ body {
   border-color: #8b8b7a;
   color: #fff;
   background: #ffc125;
+}
+.menu .menu-item a {
+  font-size: 16px;
+}
+#sidebar p,
+#sidebar span,
+#sidebar a {
+  color: #ffb6c1;
+}
+.header-inner {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .posts-expand .post-title-link::before {
   content: "";
