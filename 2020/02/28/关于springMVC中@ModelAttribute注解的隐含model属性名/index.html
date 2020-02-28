@@ -22,17 +22,17 @@
     var CONFIG = {"hostname":"yxmhuahua.github.io","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="关于springMVC中@ModelAttribute注解的隐含model属性名https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014645508&#x2F;article&#x2F;details&#x2F;88871482 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * 测试ModelAttribute注解； * 使用场景：书城">
+  <meta name="description" content="参考链接： https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014645508&#x2F;article&#x2F;details&#x2F;88871482 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * 测试ModelAttribute注解； * 使用场景：书城的图书修改为例； * 1）页面端； * 		显示要修改的图书的信息，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于springMVC中@ModelAttribute注解的隐含model属性名">
 <meta property="og:url" content="https://yxmhuahua.github.io/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/index.html">
 <meta property="og:site_name" content="Alice&#39;s blog">
-<meta property="og:description" content="关于springMVC中@ModelAttribute注解的隐含model属性名https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014645508&#x2F;article&#x2F;details&#x2F;88871482 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * 测试ModelAttribute注解； * 使用场景：书城">
+<meta property="og:description" content="参考链接： https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014645508&#x2F;article&#x2F;details&#x2F;88871482 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * 测试ModelAttribute注解； * 使用场景：书城的图书修改为例； * 1）页面端； * 		显示要修改的图书的信息，">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140302033-db6b1f48-b744-4611-82d6-41d0f8b354c0.png#align=left&display=inline&height=191&originHeight=191&originWidth=487&size=0&status=done&style=none&width=487">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140315796-beac0b2e-785d-4008-987e-4079130a7187.png#align=left&display=inline&height=167&originHeight=167&originWidth=564&size=0&status=done&style=none&width=564">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/539392/1579140324628-e5c8d1cd-cb6d-455a-ad23-72a72d94c3c4.png#align=left&display=inline&height=93&originHeight=93&originWidth=1178&size=0&status=done&style=none&width=1178">
 <meta property="article:published_time" content="2020-02-28T11:19:11.000Z">
-<meta property="article:modified_time" content="2020-02-28T14:01:55.453Z">
+<meta property="article:modified_time" content="2020-02-28T14:30:26.083Z">
 <meta property="article:author" content="爱吃饭的花花">
 <meta property="article:tag" content="spring框架">
 <meta name="twitter:card" content="summary">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:01:55" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:30:26" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,7 +218,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/spring%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">spring框架</span></a>
+                  <a href="/categories/spring%E6%A1%86%E6%9E%B6%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5/" itemprop="url" rel="index"><span itemprop="name">spring框架参考链接</span></a>
                 </span>
             </span>
 
@@ -254,7 +254,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="关于springMVC中-ModelAttribute注解的隐含model属性名"><a href="#关于springMVC中-ModelAttribute注解的隐含model属性名" class="headerlink" title="关于springMVC中@ModelAttribute注解的隐含model属性名"></a>关于springMVC中@ModelAttribute注解的隐含model属性名</h1><p><a href="https://blog.csdn.net/u014645508/article/details/88871482" target="_blank" rel="noopener">https://blog.csdn.net/u014645508/article/details/88871482</a></p>
+        <p>参考链接：</p>
+<p><a href="https://blog.csdn.net/u014645508/article/details/88871482" target="_blank" rel="noopener">https://blog.csdn.net/u014645508/article/details/88871482</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试ModelAttribute注解；</span></span><br><span class="line"><span class="comment"> * 使用场景：书城的图书修改为例；</span></span><br><span class="line"><span class="comment"> * 1）页面端；</span></span><br><span class="line"><span class="comment"> * 		显示要修改的图书的信息，图书的所有字段都在</span></span><br><span class="line"><span class="comment"> * 2）servlet收到修改请求，调用dao；</span></span><br><span class="line"><span class="comment"> * 		String sql="update bs_book set title=?,</span></span><br><span class="line"><span class="comment"> * 					author=?,price=?,</span></span><br><span class="line"><span class="comment"> * 					sales=?,stock=?,img_path=? </span></span><br><span class="line"><span class="comment"> * 				where id=?";</span></span><br><span class="line"><span class="comment"> * 3）实际场景？</span></span><br><span class="line"><span class="comment"> * 		并不是全字段修改；只会修改部分字段，以修改用户信息为例；</span></span><br><span class="line"><span class="comment"> * 		username  password  address;</span></span><br><span class="line"><span class="comment"> * 		1）、不修改的字段可以在页面进行展示但是不要提供修改输入框；</span></span><br><span class="line"><span class="comment"> * 		2）、为了简单，Controller直接在参数位置来写Book对象</span></span><br><span class="line"><span class="comment"> * 		3）、SpringMVC为我们自动封装book；（没有带的值是null）</span></span><br><span class="line"><span class="comment"> * 		4）、如果接下来调用了一个全字段更新的dao操作；会将其他的字段可能变为null；</span></span><br><span class="line"><span class="comment"> * 			sql = "update bs_book set"</span></span><br><span class="line"><span class="comment"> * 			if(book.getBookName())&#123;</span></span><br><span class="line"><span class="comment"> * 				sql +="bookName=?,"</span></span><br><span class="line"><span class="comment"> * 			&#125;</span></span><br><span class="line"><span class="comment"> * 			if(book.getPrice())&#123;</span></span><br><span class="line"><span class="comment"> * 				sql +="price=?"</span></span><br><span class="line"><span class="comment"> * 			&#125;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 4）、如何能保证全字段更新的时候，只更新了页面携带的数据；</span></span><br><span class="line"><span class="comment"> * 		1）、修改dao；代价大？</span></span><br><span class="line"><span class="comment"> * 		2）、Book对象是如何封装的？</span></span><br><span class="line"><span class="comment"> * 			1）、SpringMVC创建一个book对象，每个属性都有默认值，bookName就是null；</span></span><br><span class="line"><span class="comment"> * 				1、让SpringMVC别创建book对象，直接从数据库中先取出一个id=100的book对象的信息</span></span><br><span class="line"><span class="comment"> * 				2、Book [id=100, bookName=西游记, author=张三, stock=12, sales=32, price=98.98]</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 			2）、将请求中所有与book对应的属性一一设置过来；</span></span><br><span class="line"><span class="comment"> * 				3、使用刚才从数据库取出的book对象，给它 的里面设置值；（请求参数带了哪些值就覆盖之前的值）</span></span><br><span class="line"><span class="comment"> * 				4、带了的字段就改为携带的值，没带的字段就保持之前的值</span></span><br><span class="line"><span class="comment"> * 			3）、调用全字段更新就有问题；</span></span><br><span class="line"><span class="comment"> * 				5、将之前从数据库中查到的对象，并且封装了请求参数的对象。进行保存；</span></span><br><span class="line"><span class="comment"> *</span></span><br></pre></td></tr></table></figure>
  <a id="more"></a>
 <p>在一个Controller内，被@ModelAttribute标注的方法会在此controller的每个handler方法执行前被执行。因此对于一个controller映射多个URL的用法来说，要谨慎使用<br>　　被@ModelAttribute标注的方法的参数绑定规则和普通handler方法相同。<br>　　可以理解为：</p>
@@ -408,7 +409,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于springMVC中-ModelAttribute注解的隐含model属性名"><span class="nav-number">1.</span> <span class="nav-text">关于springMVC中@ModelAttribute注解的隐含model属性名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-使用-ModelAttribute-注解无返回值的方法"><span class="nav-number">2.</span> <span class="nav-text">1. 使用 @ModelAttribute  注解无返回值的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-使用-ModelAttribute-注解带有返回值的方法"><span class="nav-number">3.</span> <span class="nav-text">2. 使用 @ModelAttribute  注解带有返回值的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-应用在方法上，并且方法也使用了-RequestMapping"><span class="nav-number">4.</span> <span class="nav-text">3.应用在方法上，并且方法也使用了@RequestMapping </span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-使用-ModelAttribute-注解无返回值的方法"><span class="nav-number">1.</span> <span class="nav-text">1. 使用 @ModelAttribute  注解无返回值的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-使用-ModelAttribute-注解带有返回值的方法"><span class="nav-number">2.</span> <span class="nav-text">2. 使用 @ModelAttribute  注解带有返回值的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-应用在方法上，并且方法也使用了-RequestMapping"><span class="nav-number">3.</span> <span class="nav-text">3.应用在方法上，并且方法也使用了@RequestMapping </span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -428,7 +429,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">

@@ -3,7 +3,7 @@
   <entry>
     <title>JAVA与C、C++的区别</title>
     <url>/2020/02/28/JAVA%E4%B8%8EC%E3%80%81C-%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="Java与C、C-的10大区别"><a href="#Java与C、C-的10大区别" class="headerlink" title="Java与C、C++的10大区别"></a>Java与C、C++的10大区别</h1><p>  首先应该清楚，Java 是由 C++发展而来的，保留了 C++的大部分内容，其编程方式类似于 C++。但 Java 的句法更清晰、规模更小、更易学。Sun 公司曾对多种程序设计语言进行分析研究，取其精华去其糟粕，最终推出了 Java。Java从根本上解决了C++的固有缺陷，形成了新一代面向对象的程序设计语言。</p>
+    <content><![CDATA[<p>  首先应该清楚，Java 是由 C++发展而来的，保留了 C++的大部分内容，其编程方式类似于 C++。但 Java 的句法更清晰、规模更小、更易学。Sun 公司曾对多种程序设计语言进行分析研究，取其精华去其糟粕，最终推出了 Java。Java从根本上解决了C++的固有缺陷，形成了新一代面向对象的程序设计语言。</p>
 <a id="more"></a>
 
 <p><img src="https://cdn.nlark.com/yuque/0/2019/jpeg/539392/1576821979686-65d43364-c71b-4d10-be86-1500eaef0647.jpeg#align=left&display=inline&height=375&originHeight=375&originWidth=640&size=0&status=done&style=none&width=640" alt><br>Java 和 C/C++的相似之处多于不同之处，有 C 基础的读者，学习 Java 会更容易。相较而言，Java 的编程环境更为简单。在此，给大家列举以下Java与C/C++之间的区别之处。</p>
@@ -23,7 +23,7 @@
   <entry>
     <title>JAVA关键字</title>
     <url>/2020/02/28/JAVA%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h3 id="关键字-1"><a href="#关键字-1" class="headerlink" title="关键字"></a>关键字</h3><p><img src="/2020/02/28/JAVA%E5%85%B3%E9%94%AE%E5%AD%97/1.png" alt="img"></p>
+    <content><![CDATA[<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p><img src="/2020/02/28/JAVA%E5%85%B3%E9%94%AE%E5%AD%97/1.png" alt="img"></p>
  <a id="more"></a>
 
 <p>一）总表：java关键字共53个（其中包含两个保留字const，goto）</p>
@@ -274,7 +274,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>JAVA基础概念</title>
     <url>/2020/02/28/JAVA%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>Java作为一种面向对象语言。支持以下基本概念：</p>
+    <content><![CDATA[<p>Java作为一种面向对象语言。支持以下基本概念：</p>
 <ul>
 <li>多态</li>
 <li>继承</li>
@@ -364,7 +364,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>JDBC核心技术</title>
     <url>/2020/02/28/JDBC/</url>
-    <content><![CDATA[<h1 id="JDBC核心技术"><a href="#JDBC核心技术" class="headerlink" title="JDBC核心技术"></a>JDBC核心技术</h1><p>Java数据库连接，（Java Database Connectivity，简称JDBC）是Java语言中用来规范客户端程序如何来访问数据库的应用程序接口，提供了诸如查询和更新数据库中数据的方法。JDBC也是Sun Microsystems的商标。我们通常说的JDBC是面向关系型数据库的。</p>
+    <content><![CDATA[<p>Java数据库连接，（Java Database Connectivity，简称JDBC）是Java语言中用来规范客户端程序如何来访问数据库的应用程序接口，提供了诸如查询和更新数据库中数据的方法。JDBC也是Sun Microsystems的商标。我们通常说的JDBC是面向关系型数据库的。</p>
 <a id="more"></a>
 
 <h2 id="第1章：JDBC概述"><a href="#第1章：JDBC概述" class="headerlink" title="第1章：JDBC概述"></a>第1章：JDBC概述</h2><h3 id="1-1-数据的持久化"><a href="#1-1-数据的持久化" class="headerlink" title="1.1 数据的持久化"></a>1.1 数据的持久化</h3><ul>
@@ -1343,7 +1343,8 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>Spring MVC 9大组件概述</title>
     <url>/2020/02/28/Spring%20MVC%209%E5%A4%A7%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="Spring-MVC-9大组件概述"><a href="#Spring-MVC-9大组件概述" class="headerlink" title="Spring MVC 9大组件概述"></a>Spring MVC 9大组件概述</h1><p><a href="https://www.cnblogs.com/baichunyu/articles/11157337.html" target="_blank" rel="noopener">https://www.cnblogs.com/baichunyu/articles/11157337.html</a></p>
+    <content><![CDATA[<p>参考链接：</p>
+<p><a href="https://www.cnblogs.com/baichunyu/articles/11157337.html" target="_blank" rel="noopener">https://www.cnblogs.com/baichunyu/articles/11157337.html</a></p>
 <hr>
 <p>　<strong>SpringMVC中的Servlet一共有三个层次，分别是HttpServletBean、FrameworkServlet和 DispatcherServlet。HttpServletBean直接继承自java的HttpServlet，其作用是将Servlet中配置的参数设置到相应的属性；FrameworkServlet初始化了WebApplicationContext，DispatcherServlet初始化了自身的9个组件。</strong><br>**　　本篇博客的内容就是对9个组件做个简单概述。**<br>**　　在学习9个组件之前，我们需要先了解Handler的概念，也就是处理器。它直接应对着MVC中的C也就是Controller层，它的具体表现形式有很多，可以是类，也可以是方法。在Controller层中@RequestMapping标注的所有方法都可以看成是一个Handler，只要可以实际处理请求就可以是Handler。**</p>
 <h2 id="（1）HandlerMapping"><a href="#（1）HandlerMapping" class="headerlink" title="（1）HandlerMapping"></a>（1）HandlerMapping</h2><p>　　是用来查找Handler的。在SpringMVC中会有很多请求，每个请求都需要一个Handler处理，具体接收到一个请求之后使用哪个Handler进行处理呢？这就是HandlerMapping需要做的事。<br>public interface HandlerMapping<br>{<br>     HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;<br> }<br>　　我们可以看到HandlerMapping接口中只定义了一个方法，就是通过request找到HandlerExecutionChain，而HandlerExecutionChain包装了一个Handler和一组Interceptors。</p>
@@ -1366,7 +1367,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>SpringMVC接收与响应json数据的几种方式</title>
     <url>/2020/02/28/SpringMVC%E6%8E%A5%E6%94%B6%E4%B8%8E%E5%93%8D%E5%BA%94json%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="SpringMVC接收与响应json数据的几种方式"><a href="#SpringMVC接收与响应json数据的几种方式" class="headerlink" title="SpringMVC接收与响应json数据的几种方式"></a>SpringMVC接收与响应json数据的几种方式</h1><p>前后端的数据交互，除了通过form表单进行提交外，也可以通过ajax向后端传递和接收json格式数据（这种方式可以实现请求数据和页面分离）<br> <a id="more"></a><br><a href="https://m.jb51.net/article/157660.htm" target="_blank" rel="noopener">https://m.jb51.net/article/157660.htm</a></p>
+    <content><![CDATA[<p>前后端的数据交互，除了通过form表单进行提交外，也可以通过ajax向后端传递和接收json格式数据（这种方式可以实现请求数据和页面分离）<br> <a id="more"></a><br><a href="https://m.jb51.net/article/157660.htm" target="_blank" rel="noopener">https://m.jb51.net/article/157660.htm</a></p>
 <h1 id="详解SpringMVC-RequestBody接收Json对象字符串"><a href="#详解SpringMVC-RequestBody接收Json对象字符串" class="headerlink" title="详解SpringMVC @RequestBody接收Json对象字符串"></a>详解SpringMVC @RequestBody接收Json对象字符串</h1><p><a href="https://m.jb51.net/article/102693.htm" target="_blank" rel="noopener">https://m.jb51.net/article/102693.htm</a></p>
 ]]></content>
       <categories>
@@ -1379,7 +1380,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>spring概述</title>
     <url>/2020/02/28/spring%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="spring概述"><a href="#spring概述" class="headerlink" title="spring概述"></a>spring概述</h1><p>Spring是一个开源框架，它由<a href="https://baike.baidu.com/item/Rod%20Johnson" target="_blank" rel="noopener">Rod Johnson</a>创建。它是为了解决企业应用开发的复杂性而创建的。Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。<br><strong>Spring是一个轻量级的**</strong>控制反转(IoC)<strong>**和面向切面(AOP)的容器框架。</strong></p>
+    <content><![CDATA[<p>Spring是一个开源框架，它由<a href="https://baike.baidu.com/item/Rod%20Johnson" target="_blank" rel="noopener">Rod Johnson</a>创建。它是为了解决企业应用开发的复杂性而创建的。Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。<br><strong>Spring是一个轻量级的**</strong>控制反转(IoC)<strong>**和面向切面(AOP)的容器框架。</strong></p>
 <ul>
 <li>轻量——从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。</li>
 <li>控制反转——Spring通过一种称作控制反转（IoC）的技术促进了松耦合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。</li>
@@ -1441,7 +1442,8 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>关于springMVC中@ModelAttribute注解的隐含model属性名</title>
     <url>/2020/02/28/%E5%85%B3%E4%BA%8EspringMVC%E4%B8%AD@ModelAttribute%E6%B3%A8%E8%A7%A3%E7%9A%84%E9%9A%90%E5%90%ABmodel%E5%B1%9E%E6%80%A7%E5%90%8D/</url>
-    <content><![CDATA[<h1 id="关于springMVC中-ModelAttribute注解的隐含model属性名"><a href="#关于springMVC中-ModelAttribute注解的隐含model属性名" class="headerlink" title="关于springMVC中@ModelAttribute注解的隐含model属性名"></a>关于springMVC中@ModelAttribute注解的隐含model属性名</h1><p><a href="https://blog.csdn.net/u014645508/article/details/88871482" target="_blank" rel="noopener">https://blog.csdn.net/u014645508/article/details/88871482</a></p>
+    <content><![CDATA[<p>参考链接：</p>
+<p><a href="https://blog.csdn.net/u014645508/article/details/88871482" target="_blank" rel="noopener">https://blog.csdn.net/u014645508/article/details/88871482</a></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试ModelAttribute注解；</span></span><br><span class="line"><span class="comment"> * 使用场景：书城的图书修改为例；</span></span><br><span class="line"><span class="comment"> * 1）页面端；</span></span><br><span class="line"><span class="comment"> * 		显示要修改的图书的信息，图书的所有字段都在</span></span><br><span class="line"><span class="comment"> * 2）servlet收到修改请求，调用dao；</span></span><br><span class="line"><span class="comment"> * 		String sql="update bs_book set title=?,</span></span><br><span class="line"><span class="comment"> * 					author=?,price=?,</span></span><br><span class="line"><span class="comment"> * 					sales=?,stock=?,img_path=? </span></span><br><span class="line"><span class="comment"> * 				where id=?";</span></span><br><span class="line"><span class="comment"> * 3）实际场景？</span></span><br><span class="line"><span class="comment"> * 		并不是全字段修改；只会修改部分字段，以修改用户信息为例；</span></span><br><span class="line"><span class="comment"> * 		username  password  address;</span></span><br><span class="line"><span class="comment"> * 		1）、不修改的字段可以在页面进行展示但是不要提供修改输入框；</span></span><br><span class="line"><span class="comment"> * 		2）、为了简单，Controller直接在参数位置来写Book对象</span></span><br><span class="line"><span class="comment"> * 		3）、SpringMVC为我们自动封装book；（没有带的值是null）</span></span><br><span class="line"><span class="comment"> * 		4）、如果接下来调用了一个全字段更新的dao操作；会将其他的字段可能变为null；</span></span><br><span class="line"><span class="comment"> * 			sql = "update bs_book set"</span></span><br><span class="line"><span class="comment"> * 			if(book.getBookName())&#123;</span></span><br><span class="line"><span class="comment"> * 				sql +="bookName=?,"</span></span><br><span class="line"><span class="comment"> * 			&#125;</span></span><br><span class="line"><span class="comment"> * 			if(book.getPrice())&#123;</span></span><br><span class="line"><span class="comment"> * 				sql +="price=?"</span></span><br><span class="line"><span class="comment"> * 			&#125;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 4）、如何能保证全字段更新的时候，只更新了页面携带的数据；</span></span><br><span class="line"><span class="comment"> * 		1）、修改dao；代价大？</span></span><br><span class="line"><span class="comment"> * 		2）、Book对象是如何封装的？</span></span><br><span class="line"><span class="comment"> * 			1）、SpringMVC创建一个book对象，每个属性都有默认值，bookName就是null；</span></span><br><span class="line"><span class="comment"> * 				1、让SpringMVC别创建book对象，直接从数据库中先取出一个id=100的book对象的信息</span></span><br><span class="line"><span class="comment"> * 				2、Book [id=100, bookName=西游记, author=张三, stock=12, sales=32, price=98.98]</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 			2）、将请求中所有与book对应的属性一一设置过来；</span></span><br><span class="line"><span class="comment"> * 				3、使用刚才从数据库取出的book对象，给它 的里面设置值；（请求参数带了哪些值就覆盖之前的值）</span></span><br><span class="line"><span class="comment"> * 				4、带了的字段就改为携带的值，没带的字段就保持之前的值</span></span><br><span class="line"><span class="comment"> * 			3）、调用全字段更新就有问题；</span></span><br><span class="line"><span class="comment"> * 				5、将之前从数据库中查到的对象，并且封装了请求参数的对象。进行保存；</span></span><br><span class="line"><span class="comment"> *</span></span><br></pre></td></tr></table></figure>
  <a id="more"></a>
 <p>在一个Controller内，被@ModelAttribute标注的方法会在此controller的每个handler方法执行前被执行。因此对于一个controller映射多个URL的用法来说，要谨慎使用<br>　　被@ModelAttribute标注的方法的参数绑定规则和普通handler方法相同。<br>　　可以理解为：</p>
@@ -1512,7 +1514,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
 <p>这种情况下，返回值 String （或者其他对象），就不再是视图了。还是我们上面讲到的放入 Model 中的值，对应的key为注解指定的name1，此时对应的页面就是 <a href>@RequestMapping </a> 的值 test1，交给页面解析后就是test1.jsp</p>
 ]]></content>
       <categories>
-        <category>spring框架</category>
+        <category>spring框架参考链接</category>
       </categories>
       <tags>
         <tag>spring框架</tag>
@@ -1521,7 +1523,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>关于分层，DAO、domain、service、servlet的一些理解</title>
     <url>/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="关于分层，DAO、domain、service、servlet的一些理解"><a href="#关于分层，DAO、domain、service、servlet的一些理解" class="headerlink" title="关于分层，DAO、domain、service、servlet的一些理解"></a>关于分层，DAO、domain、service、servlet的一些理解</h1><p>domain的概念，通常会分很多层，比如经典的三层架构，控制层、业务层、数据访问层（DAO），此外，还有一个层，就是domain层<br>domain层，通常就是用于放置这个系统中，与数据库中的表，一一对应起来的JavaBean的<br>model层：和domain区别；可能都是javaBean，<br>这个区别是用途不同，domain通常就代表了与数据库表–一一对应的javaBean,<br>model通常代表了不与数据库一一对应的javaBean，但是封装的数据是前端的JS脚本，需要使用的数据<br>domain：只是定义一个javabean。<br>dao：对于数据库的操作，都放到dao层，也就是dao里面通常是对数据库的增、删、改、查等操作。<br>service：完成相应的业务逻辑处理，调用dao层。<br>servlet：完成界面请求、对界面进行跳转等等。servlet调用service层。<br> <a id="more"></a></p>
+    <content><![CDATA[<p>Domain的概念，通常会分很多层，比如经典的三层架构，控制层、业务层、数据访问层（DAO），此外，还有一个层，就是domain层<br>domain层，通常就是用于放置这个系统中，与数据库中的表，一一对应起来的JavaBean的<br>model层：和domain区别；可能都是javaBean，<br>这个区别是用途不同，domain通常就代表了与数据库表–一一对应的javaBean,<br>model通常代表了不与数据库一一对应的javaBean，但是封装的数据是前端的JS脚本，需要使用的数据<br>domain：只是定义一个javabean。<br>dao：对于数据库的操作，都放到dao层，也就是dao里面通常是对数据库的增、删、改、查等操作。<br>service：完成相应的业务逻辑处理，调用dao层。<br>servlet：完成界面请求、对界面进行跳转等等。servlet调用service层。<br> <a id="more"></a></p>
 ]]></content>
       <categories>
         <category>java开发</category>
@@ -1533,7 +1535,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>java基础语法-String</title>
     <url>/2020/02/28/article/</url>
-    <content><![CDATA[<h1 id="String详解"><a href="#String详解" class="headerlink" title="String详解"></a>String详解</h1><p><strong>在Java中，对于String类出现了两种声明方法：</strong><br>　　一·String str=new String(“Hello”);<br>　　二·String str=”Hello”;<br>　　这两者的区别在于前者是new了一个对象，在堆空间分配了内存，将对象放在里面，str指向该对象；后者则是直接指向了”Hello”字符串。<br>　　举个例子：<br>　　　　　　 String s1=”abcd”;<br>　　　　　　 String s2=”abcd”;<br>　　　　　　 那么s1==s2则会返回true，这是因为==比较的是地址，而在系统优化中，相同的s2会直接指向已有的s1的”abcd”的存放地址。<br>　　　　　　 String s1=new String(“abcd”);<br>　　　　　　 String s2=new String(“abcd”);<br>　　　　　　 这样s1==s2却返回了false，因为s1，s2为两个不同对象，系统分配了不同的存储地址。有关对象的比较用equals()就能解决了。</p>
+    <content><![CDATA[<p><strong>在Java中，对于String类出现了两种声明方法：</strong><br>　　一·String str=new String(“Hello”);<br>　　二·String str=”Hello”;<br>　　这两者的区别在于前者是new了一个对象，在堆空间分配了内存，将对象放在里面，str指向该对象；后者则是直接指向了”Hello”字符串。<br>　　举个例子：<br>　　　　　　 String s1=”abcd”;<br>　　　　　　 String s2=”abcd”;<br>　　　　　　 那么s1==s2则会返回true，这是因为==比较的是地址，而在系统优化中，相同的s2会直接指向已有的s1的”abcd”的存放地址。<br>　　　　　　 String s1=new String(“abcd”);<br>　　　　　　 String s2=new String(“abcd”);<br>　　　　　　 这样s1==s2却返回了false，因为s1，s2为两个不同对象，系统分配了不同的存储地址。有关对象的比较用equals()就能解决了。</p>
  <a id="more"></a>
 
 <hr>
@@ -1654,7 +1656,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>JAVA How2J</title>
     <url>/2020/02/28/JAVA%20How2J/</url>
-    <content><![CDATA[<h1 id="How2J"><a href="#How2J" class="headerlink" title="How2J"></a>How2J</h1><h2 id="JAVA中的类和对象"><a href="#JAVA中的类和对象" class="headerlink" title="JAVA中的类和对象"></a>JAVA中的类和对象</h2><ul>
+    <content><![CDATA[<h2 id="JAVA中的类和对象"><a href="#JAVA中的类和对象" class="headerlink" title="JAVA中的类和对象"></a>JAVA中的类和对象</h2><ul>
 <li>在编程时，类Hero的概念是<strong>一些共同的状态，针对不同的英雄进行不同的对象的实例化，所以实际应用中编程思路要清晰！类就像一个模板</strong>，根据这样一个模板，可以创建一个个的具体的英雄；一个个具体的英雄，就叫一个个的<strong>对象 ，new Hero()</strong> 就是java中创建一个英雄对象的意；</li>
 </ul>
 <p>Error:(47, 36) java: 未结束的字符文字<br>错误原因：编码方式的不同，修改之后发现是字符型需要双引号而不是单引号！</p>
@@ -1721,7 +1723,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>编译及初始化过程（类初始化 对象初始化）</title>
     <url>/2020/02/28/JAVA%20%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B%EF%BC%88%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%20%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="编译及初始化过程（类初始化-对象初始化）"><a href="#编译及初始化过程（类初始化-对象初始化）" class="headerlink" title="编译及初始化过程（类初始化 对象初始化）"></a>编译及初始化过程（类初始化 对象初始化）</h1><p><a href="https://www.runoob.com/w3cnote/java-init-object-process.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/java-init-object-process.html</a></p>
+    <content><![CDATA[<p><a href="https://www.runoob.com/w3cnote/java-init-object-process.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/java-init-object-process.html</a></p>
 <h2 id="一个类及其对象初始化的过程"><a href="#一个类及其对象初始化的过程" class="headerlink" title="一个类及其对象初始化的过程"></a>一个类及其对象初始化的过程</h2><h3 id="一、什么时候需要初始化一个类"><a href="#一、什么时候需要初始化一个类" class="headerlink" title="一、什么时候需要初始化一个类"></a>一、什么时候需要初始化一个类</h3><p>首次创建某个对象时:<br>Dog dog = new Dog();<br>首次访问某个类的静态方法或者静态字段时:<br>Dog.staticFields;<br>Java 解释器就会去找类的路径，定位已经编译好的 Dog.class 文件。</p>
 <h3 id="二、获得类的资源"><a href="#二、获得类的资源" class="headerlink" title="二、获得类的资源"></a>二、获得类的资源</h3><p>然后 jvm 就会载入 Dog.class，生成一个 class 对象。这个时候如果有静态的方法或者变量，静态初始化动作都会被执行。这个时候要注意啦，静态初始化在程序运行过程中只会在 Class 对象首次加载的时候运行一次。这些资源都会放在 jvm 的方法区。<br>方法区又叫静态区，跟堆一样，被所有的线程共享。<br>方法区中包含的都是在整个程序中永远唯一的元素，包含所有的 class 和 static 变量。</p>
 <h3 id="三、初始化对象-Dog-dog-new-Dog"><a href="#三、初始化对象-Dog-dog-new-Dog" class="headerlink" title="三、初始化对象 Dog dog = new Dog()"></a>三、初始化对象 <strong>Dog dog = new Dog()</strong></h3><ul>
@@ -1760,7 +1762,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>前后端分离 服务器端概念理解</title>
     <url>/2020/02/28/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="前后端分离-服务器端概念理解"><a href="#前后端分离-服务器端概念理解" class="headerlink" title="前后端分离 服务器端概念理解"></a>前后端分离 服务器端概念理解</h1><p><strong>前端后端有两种协作方式，一种可以称之为是服务器端渲染，一种是叫做前后端分离。</strong><br>这两种方式的差别是什么呢？</p>
+    <content><![CDATA[<p><strong>前端后端有两种协作方式，一种可以称之为是服务器端渲染，一种是叫做前后端分离。</strong><br>这两种方式的差别是什么呢？</p>
 <p>服务器端渲染的方式，是指在服务器端就将网页直接生成，浏览器这里拿到的是一整个网页，CSS和JS的部分是在浏览器端执行的，而网页的内容部分，也就是数据，是由服务器端生成的。<br>这叫做服务器端渲染。</p>
 <p>至于你是用NodeJS，还是用PHP，还是Python，还是Java，还是NodeJS+Java,都不重要。<br>这是我一直都觉得，很多概念在混淆的原因，很多人都觉得说到前后端分离，就是JS和Java的分离，只要我用了JS，Java提供API，就是前后端分离了。</p>
 <p>是这样么？不是的。<br>只要你的Html网页的内容是在服务器端生成的，这就是服务器端渲染的方式。你用Openresty+lua没问题。<br>只要你的网页是在浏览器端，内容是通过接口从后端拿到的纯数据，这就是前后端分离。</p>
@@ -1791,7 +1793,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>JavaScript-基本包装类型和引用类型概念区分</title>
     <url>/2020/02/28/JavaScript-%E5%9F%BA%E6%9C%AC%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E6%A6%82%E5%BF%B5%E5%8C%BA%E5%88%86/</url>
-    <content><![CDATA[<h1 id="JavaScript-基本包装类型和引用类型概念区分"><a href="#JavaScript-基本包装类型和引用类型概念区分" class="headerlink" title="JavaScript-基本包装类型和引用类型概念区分"></a>JavaScript-基本包装类型和引用类型概念区分</h1><p><a href="https://blog.csdn.net/qq_41218152/article/details/81976148" target="_blank" rel="noopener">https://blog.csdn.net/qq_41218152/article/details/81976148</a></p>
+    <content><![CDATA[<p><a href="https://blog.csdn.net/qq_41218152/article/details/81976148" target="_blank" rel="noopener">https://blog.csdn.net/qq_41218152/article/details/81976148</a></p>
 <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><ul>
 <li>在Java中，引用类型的变量非常类似于C/C++的指针。引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型，比如 Employee、Puppy 等。变量一旦声明后，类型就不能被改变了。</li>
 <li>对象、数组都是引用数据类型。</li>
@@ -1832,7 +1834,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>变量 类 方法 代码块 格式总结</title>
     <url>/2020/02/28/JAVA%E5%8F%98%E9%87%8F%20%E7%B1%BB%20%E6%96%B9%E6%B3%95%20%E4%BB%A3%E7%A0%81%E5%9D%97%20%E6%A0%BC%E5%BC%8F%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="变量-类-方法-代码块-格式总结"><a href="#变量-类-方法-代码块-格式总结" class="headerlink" title="变量 类 方法 代码块 格式总结"></a>变量 类 方法 代码块 格式总结</h1><h2 id="变量-类-方法-代码块-格式总结-1"><a href="#变量-类-方法-代码块-格式总结-1" class="headerlink" title="变量 类 方法 代码块 格式总结"></a>变量 类 方法 代码块 格式总结</h2><h2 id="Java-常量"><a href="#Java-常量" class="headerlink" title="Java 常量"></a>Java 常量</h2><p>常量在程序运行时是不能被修改的。<br>在 Java 中使用 final 关键字来修饰常量，声明方式和变量类似：<br>final double PI = 3.1415927;<br>虽然常量名也可以用小写，但为了便于识别，通常使用大写字母表示常量。<br>字面量可以赋给任何内置类型的变量。例如：<br>byte a = 68;<br>char a = ‘A’<br>byte、int、long、和short都可以用十进制、16进制以及8进制的方式来表示。<br>当使用常量的时候，前缀 <strong>0</strong> 表示 8 进制，而前缀 <strong>0x</strong> 代表 16 进制, 例如：<br>int decimal = 100;<br>int octal = 0144;<br>int hexa =  0x64;<br>和其他语言一样，Java的字符串常量也是包含在两个引号之间的字符序列。下面是字符串型字面量的例子：<br>“Hello World”<br>“two\nlines”<br>“&quot;This is in quotes&quot;“<br>字符串常量和字符常量都可以包含任何Unicode字符。例如：<br>char a = ‘\u0001’;<br>String a = “\u0001”;<br>Java语言支持一些特殊的转义字符序列。</p>
+    <content><![CDATA[<h2 id="变量-类-方法-代码块-格式总结"><a href="#变量-类-方法-代码块-格式总结" class="headerlink" title="变量 类 方法 代码块 格式总结"></a>变量 类 方法 代码块 格式总结</h2><h2 id="Java-常量"><a href="#Java-常量" class="headerlink" title="Java 常量"></a>Java 常量</h2><p>常量在程序运行时是不能被修改的。<br>在 Java 中使用 final 关键字来修饰常量，声明方式和变量类似：<br>final double PI = 3.1415927;<br>虽然常量名也可以用小写，但为了便于识别，通常使用大写字母表示常量。<br>字面量可以赋给任何内置类型的变量。例如：<br>byte a = 68;<br>char a = ‘A’<br>byte、int、long、和short都可以用十进制、16进制以及8进制的方式来表示。<br>当使用常量的时候，前缀 <strong>0</strong> 表示 8 进制，而前缀 <strong>0x</strong> 代表 16 进制, 例如：<br>int decimal = 100;<br>int octal = 0144;<br>int hexa =  0x64;<br>和其他语言一样，Java的字符串常量也是包含在两个引号之间的字符序列。下面是字符串型字面量的例子：<br>“Hello World”<br>“two\nlines”<br>“&quot;This is in quotes&quot;“<br>字符串常量和字符常量都可以包含任何Unicode字符。例如：<br>char a = ‘\u0001’;<br>String a = “\u0001”;<br>Java语言支持一些特殊的转义字符序列。</p>
 <table>
 <thead>
 <tr>
@@ -1965,7 +1967,7 @@ zi.methodFu();  //父类的num 10</code></pre><p>   }<br>}</p>
   <entry>
     <title>Java容器详解</title>
     <url>/2020/02/28/Java%E5%AE%B9%E5%99%A8%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="Java容器详解"><a href="#Java容器详解" class="headerlink" title="Java容器详解"></a>Java容器详解</h1><h1 id><a href="#" class="headerlink" title></a><img src="https://upload-images.jianshu.io/upload_images/8629618-ef95bdd28ee20f56.gif#align=left&display=inline&height=611&originHeight=611&originWidth=643&status=uploading&style=none&width=643" alt></h1><h1 id="-1"><a href="#-1" class="headerlink" title></a></h1><h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><blockquote>
+    <content><![CDATA[<h1 id><a href="#" class="headerlink" title></a><img src="https://upload-images.jianshu.io/upload_images/8629618-ef95bdd28ee20f56.gif#align=left&display=inline&height=611&originHeight=611&originWidth=643&status=uploading&style=none&width=643" alt></h1><h1 id="-1"><a href="#-1" class="headerlink" title></a></h1><h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><blockquote>
 <p>有序的 collection（也称为序列）。此接口的用户可以对列表中每个元素的插入位置进行精确地控制。用户可以根据元素的整数索引（在列表中的位置）访问元素，并搜索列表中的元素。<br>与 set 不同，列表通常允许重复的元素。更确切地讲，列表通常允许满足 <code>e1.equals(e2)</code> 的元素对 e1 和 e2，并且如果列表本身允许 null 元素的话，通常它们允许多个 null 元素。难免有人希望通过在用户尝试插入重复元素时抛出运行时异常的方法来禁止重复的列表，但我们希望这种用法越少越好。</p>
 </blockquote>
 <h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList<E></E></h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
