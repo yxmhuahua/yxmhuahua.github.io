@@ -177,6 +177,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://yxmhuahua.github.io/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ava.jpg">
+      <meta itemprop="name" content="爱吃饭的花花">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alice's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/" class="post-title-link" itemprop="url">关于分层，DAO、domain、service、servlet的一些理解</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-28 19:19:11 / 修改时间：22:29:45" itemprop="dateCreated datePublished" datetime="2020-02-28T19:19:11+08:00">2020-02-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">java开发</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Domain的概念，通常会分很多层，比如经典的三层架构，控制层、业务层、数据访问层（DAO），此外，还有一个层，就是domain层<br>domain层，通常就是用于放置这个系统中，与数据库中的表，一一对应起来的JavaBean的<br>model层：和domain区别；可能都是javaBean，<br>这个区别是用途不同，domain通常就代表了与数据库表–一一对应的javaBean,<br>model通常代表了不与数据库一一对应的javaBean，但是封装的数据是前端的JS脚本，需要使用的数据<br>domain：只是定义一个javabean。<br>dao：对于数据库的操作，都放到dao层，也就是dao里面通常是对数据库的增、删、改、查等操作。<br>service：完成相应的业务逻辑处理，调用dao层。<br>servlet：完成界面请求、对界面进行跳转等等。servlet调用service层。<br></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/28/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B1%82%EF%BC%8CDAO%E3%80%81domain%E3%80%81service%E3%80%81servlet%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://yxmhuahua.github.io/2020/02/28/article/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -963,7 +1052,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
